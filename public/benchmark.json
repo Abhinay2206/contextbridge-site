@@ -1,0 +1,3530 @@
+{
+ "v1": {
+  "meta": {
+   "date": "2026-10-12",
+   "cli_version_string": "0.3.2",
+   "pyproject_version": "0.3.2",
+   "commit": "30c2b62",
+   "python": "3.14.6",
+   "git": "git version 2.51.0",
+   "os": "macOS 26.6.2 arm64",
+   "cpu": "Apple M3",
+   "cores": 8
+  },
+  "speed": {
+   "interpreter_startup_s": 0.06194295801105909,
+   "rows": [
+    {
+     "files": 200,
+     "dirty": 0,
+     "git_status_s": 0.015158042020630091,
+     "save_s": 0.12114912501419894,
+     "resume_check_s": 0.08769691700581461,
+     "drift_s": 0.0878281660261564,
+     "run_overhead_s": 0.09210404197801836,
+     "state_json_bytes": 2339
+    },
+    {
+     "files": 200,
+     "dirty": 50,
+     "git_status_s": 0.014336833002744243,
+     "save_s": 0.1254989159933757,
+     "resume_check_s": 0.08925770898349583,
+     "drift_s": 0.09104191602091305,
+     "run_overhead_s": 0.0976667909999378,
+     "state_json_bytes": 10623
+    },
+    {
+     "files": 2000,
+     "dirty": 0,
+     "git_status_s": 0.014322041999548674,
+     "save_s": 0.15104041597805917,
+     "resume_check_s": 0.10209187498549,
+     "drift_s": 0.10904058301821351,
+     "run_overhead_s": 0.10948941699462011,
+     "state_json_bytes": 2340
+    },
+    {
+     "files": 2000,
+     "dirty": 50,
+     "git_status_s": 0.0186573329847306,
+     "save_s": 0.19062979199225083,
+     "resume_check_s": 0.1267199579742737,
+     "drift_s": 0.14372029199148528,
+     "run_overhead_s": 0.15335125001729466,
+     "state_json_bytes": 10626
+    },
+    {
+     "files": 2000,
+     "dirty": 500,
+     "git_status_s": 0.01933579202159308,
+     "save_s": 0.20378141599940136,
+     "resume_check_s": 0.13096899999072775,
+     "drift_s": 0.1311912079981994,
+     "run_overhead_s": 0.1581205420079641,
+     "state_json_bytes": 85633
+    },
+    {
+     "files": 10000,
+     "dirty": 0,
+     "git_status_s": 0.025667750014690682,
+     "save_s": 0.16274462500587106,
+     "resume_check_s": 0.11442224998609163,
+     "drift_s": 0.11501866698381491,
+     "run_overhead_s": 0.12399587497930042,
+     "state_json_bytes": 2339
+    },
+    {
+     "files": 10000,
+     "dirty": 50,
+     "git_status_s": 0.02575425000395626,
+     "save_s": 0.18029495800146833,
+     "resume_check_s": 0.12389079100103118,
+     "drift_s": 0.12048395801684819,
+     "run_overhead_s": 0.1278045830258634,
+     "state_json_bytes": 10623
+    },
+    {
+     "files": 10000,
+     "dirty": 500,
+     "git_status_s": 0.027430417016148567,
+     "save_s": 0.21457191699300893,
+     "resume_check_s": 0.13195229199482128,
+     "drift_s": 0.14155733300140128,
+     "run_overhead_s": 0.15836537498398684,
+     "state_json_bytes": 85633
+    }
+   ]
+  },
+  "drift": [
+   {
+    "id": "no_change",
+    "description": "nothing changes after the checkpoint",
+    "category": "control",
+    "expected": "READY",
+    "got": "READY",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "exit_code": 0,
+    "top_finding": null
+   },
+   {
+    "id": "clone_same_history",
+    "description": "state copied to a fresh clone of the same repo",
+    "category": "portability",
+    "expected": "READY",
+    "got": "READY",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "exit_code": 0,
+    "top_finding": null
+   },
+   {
+    "id": "clone_extra_edit",
+    "description": "fresh clone plus a local uncommitted edit",
+    "category": "portability",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": "new uncommitted change",
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "src/a.py: new uncommitted change since checkpoint"
+   },
+   {
+    "id": "edit_tracked_file",
+    "description": "append to a tracked file (uncommitted)",
+    "category": "file change",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": "new uncommitted change",
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "src/a.py: new uncommitted change since checkpoint"
+   },
+   {
+    "id": "new_untracked_file",
+    "description": "create a new untracked file",
+    "category": "file change",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": "new uncommitted change",
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "src/new.py: new uncommitted change since checkpoint"
+   },
+   {
+    "id": "whitespace_only_edit",
+    "description": "whitespace-only edit",
+    "category": "file change",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "src/a.py: new uncommitted change since checkpoint"
+   },
+   {
+    "id": "chmod_only",
+    "description": "file mode change only",
+    "category": "file change",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "src/b.py: new uncommitted change since checkpoint"
+   },
+   {
+    "id": "delete_tracked_file",
+    "description": "delete a tracked, unrelated file",
+    "category": "file change",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "README.md: new uncommitted change since checkpoint"
+   },
+   {
+    "id": "delete_decision_code",
+    "description": "delete the file a decision points at",
+    "category": "graph",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": "no longer exists",
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "A1 'a() exists': src/a.py no longer exists"
+   },
+   {
+    "id": "one_new_commit",
+    "description": "one new unrelated commit",
+    "category": "history",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": "commit(s) since",
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "1 commit(s) since checkpoint (ca855b3c -> 4fb7fc30)"
+   },
+   {
+    "id": "five_new_commits",
+    "description": "five new commits",
+    "category": "history",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": "5 commit",
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "5 commit(s) since checkpoint (ca855b3c -> c7575413)"
+   },
+   {
+    "id": "commit_touches_planned",
+    "description": "commit edits the planned task's file",
+    "category": "history",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": "feature B",
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "1 commit(s) since checkpoint (3acde5c5 -> dbf4cac3)"
+   },
+   {
+    "id": "assumption_text_removed",
+    "description": "assumed text removed from file",
+    "category": "assumption",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": "no longer contains",
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "A1 'a() exists': src/a.py no longer contains 'def a'"
+   },
+   {
+    "id": "branch_switch",
+    "description": "checkout a new branch",
+    "category": "history",
+    "expected": "BLOCKED",
+    "got": "BLOCKED",
+    "verdict_ok": true,
+    "finding_expected": "branch changed",
+    "finding_ok": true,
+    "exit_code": 2,
+    "top_finding": "branch changed: main -> other"
+   },
+   {
+    "id": "detached_head",
+    "description": "detach HEAD at same commit",
+    "category": "history",
+    "expected": "BLOCKED",
+    "got": "BLOCKED",
+    "verdict_ok": true,
+    "finding_expected": "branch changed",
+    "finding_ok": true,
+    "exit_code": 2,
+    "top_finding": "branch changed: main -> (detached)"
+   },
+   {
+    "id": "amend_head",
+    "description": "amend the checkpointed commit",
+    "category": "history",
+    "expected": "BLOCKED",
+    "got": "BLOCKED",
+    "verdict_ok": true,
+    "finding_expected": "not an ancestor",
+    "finding_ok": true,
+    "exit_code": 2,
+    "top_finding": "checkpoint commit 7ba199a5 is not an ancestor of HEAD (rebase, force-push or different branch); file comparison is unreliable"
+   },
+   {
+    "id": "reset_hard_back",
+    "description": "reset --hard to the previous commit",
+    "category": "history",
+    "expected": "BLOCKED",
+    "got": "BLOCKED",
+    "verdict_ok": true,
+    "finding_expected": "not an ancestor",
+    "finding_ok": true,
+    "exit_code": 2,
+    "top_finding": "checkpoint commit 6a3da843 is not an ancestor of HEAD (rebase, force-push or different branch); file comparison is unreliable"
+   },
+   {
+    "id": "same_commit_new_branch_name",
+    "description": "rename branch (same commit)",
+    "category": "history",
+    "expected": "BLOCKED",
+    "got": "BLOCKED",
+    "verdict_ok": true,
+    "finding_expected": "branch changed",
+    "finding_ok": true,
+    "exit_code": 2,
+    "top_finding": "branch changed: main -> renamed"
+   },
+   {
+    "id": "edit_env_file",
+    "description": "create .env (excluded by default)",
+    "category": "privacy",
+    "expected": "READY",
+    "got": "READY",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "exit_code": 0,
+    "top_finding": null
+   },
+   {
+    "id": "edit_own_notes",
+    "description": "edit contextbridge/HANDOFF.md",
+    "category": "privacy",
+    "expected": "READY",
+    "got": "READY",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "exit_code": 0,
+    "top_finding": null
+   },
+   {
+    "id": "gitignored_change",
+    "description": "write a git-ignored build artifact",
+    "category": "blind spot",
+    "expected": "READY",
+    "got": "READY",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "exit_code": 0,
+    "top_finding": null
+   },
+   {
+    "id": "revert_wip_file",
+    "description": "WIP file reverted with git checkout",
+    "category": "file change",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "no passing test run matches the current workspace state; re-run tests before trusting 'done'"
+   },
+   {
+    "id": "stash_wip_file",
+    "description": "WIP file stashed",
+    "category": "file change",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "no passing test run matches the current workspace state; re-run tests before trusting 'done'"
+   },
+   {
+    "id": "commit_wip_file",
+    "description": "WIP file committed unchanged",
+    "category": "history",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": "commit(s) since",
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "1 commit(s) since checkpoint (69e00cfe -> fbcb3ccb)"
+   },
+   {
+    "id": "wip_edited_again",
+    "description": "WIP file edited further",
+    "category": "file change",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": "edited after checkpoint",
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "src/dirty.py: edited after checkpoint"
+   },
+   {
+    "id": "next_action_file_created",
+    "description": "create the file named by --next-path",
+    "category": "file change",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": "do next",
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "tests/test_new.py: new uncommitted change since checkpoint"
+   },
+   {
+    "id": "nested_git_repo_added",
+    "description": "a nested git repo appears as a new directory",
+    "category": "file change",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "vendor/lib/: new uncommitted change since checkpoint"
+   },
+   {
+    "id": "remote_ahead_unfetched",
+    "description": "teammate pushed to origin; local clone has not fetched",
+    "category": "blind spot (should warn)",
+    "expected": "REVIEW_REQUIRED",
+    "got": "READY",
+    "verdict_ok": false,
+    "finding_expected": null,
+    "finding_ok": true,
+    "exit_code": 0,
+    "top_finding": null
+   },
+   {
+    "id": "nested_repo_edited_after_checkpoint",
+    "description": "nested repo existed at checkpoint; edited and committed inside it afterwards",
+    "category": "blind spot (should warn)",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "vendor/lib/: edited after checkpoint"
+   },
+   {
+    "id": "rename_file",
+    "description": "git mv a tracked file",
+    "category": "file change",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "src/b2.py: new uncommitted change since checkpoint"
+   },
+   {
+    "id": "symlink_added",
+    "description": "add a symlink to a file",
+    "category": "file change",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "src/link.py: new uncommitted change since checkpoint"
+   },
+   {
+    "id": "binary_file_added",
+    "description": "add a binary file",
+    "category": "file change",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "img.bin: new uncommitted change since checkpoint"
+   },
+   {
+    "id": "unicode_filename",
+    "description": "add a file with a non-ASCII, spaced name",
+    "category": "file change",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "src/na\u00efve file \u00fc.py: new uncommitted change since checkpoint"
+   },
+   {
+    "id": "failed_run_after",
+    "description": "a test run fails after the checkpoint",
+    "category": "evidence",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": "FAILED",
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "last test run E2 `/opt/homebrew/opt/python@3.14/bin/python3.14 -c raise SystemExit(1) -y` FAILED (exit 1)"
+   },
+   {
+    "id": "unfinished_run",
+    "description": "a recorded run never finished",
+    "category": "evidence",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": "never finished",
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "E1 `/opt/homebrew/opt/python@3.14/bin/python3.14 -c pass -y` never finished (still running or interrupted)"
+   },
+   {
+    "id": "claim_without_any_run",
+    "description": "completed claim, zero test runs recorded",
+    "category": "evidence",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": "no test runs recorded",
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "no test runs recorded; nothing is verified (use `contextbridge run -- <cmd>`)"
+   },
+   {
+    "id": "state_deleted",
+    "description": "contextbridge/state.json deleted",
+    "category": "state",
+    "expected": "BLOCKED",
+    "got": "BLOCKED",
+    "verdict_ok": true,
+    "finding_expected": "no checkpoint",
+    "finding_ok": true,
+    "exit_code": 2,
+    "top_finding": "no checkpoint found; create one with `contextbridge save` in the original session"
+   },
+   {
+    "id": "state_corrupt",
+    "description": "state.json truncated",
+    "category": "state",
+    "expected": "BLOCKED",
+    "got": "BLOCKED",
+    "verdict_ok": true,
+    "finding_expected": "not valid JSON",
+    "finding_ok": true,
+    "exit_code": 2,
+    "top_finding": "contextbridge/state.json is not valid JSON (Expecting value: line 1 column 12 (char 11)); fix or delete it"
+   },
+   {
+    "id": "state_wrong_schema",
+    "description": "state.json from a future schema",
+    "category": "state",
+    "expected": "BLOCKED",
+    "got": "BLOCKED",
+    "verdict_ok": true,
+    "finding_expected": "unsupported schema",
+    "finding_ok": true,
+    "exit_code": 2,
+    "top_finding": "unsupported schema 'contextbridge/9'"
+   }
+  ],
+  "scanner": {
+   "supported": {
+    "aws_access_key": {
+     "n": 100,
+     "detected": 100,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "github_token": {
+     "n": 100,
+     "detected": 100,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "slack_token": {
+     "n": 100,
+     "detected": 100,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "google_api_key": {
+     "n": 100,
+     "detected": 100,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "openai_style_sk": {
+     "n": 100,
+     "detected": 100,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "anthropic_style_sk": {
+     "n": 100,
+     "detected": 100,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "jwt": {
+     "n": 100,
+     "detected": 100,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "pem_private_key": {
+     "n": 100,
+     "detected": 100,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "password_assignment": {
+     "n": 100,
+     "detected": 100,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "json_secret": {
+     "n": 100,
+     "detected": 100,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    }
+   },
+   "unsupported": {
+    "stripe_live_key": {
+     "n": 100,
+     "detected": 100,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "github_fine_grained_pat": {
+     "n": 100,
+     "detected": 100,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "sendgrid_key": {
+     "n": 100,
+     "detected": 100,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "npm_token": {
+     "n": 100,
+     "detected": 100,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "azure_connection_string": {
+     "n": 100,
+     "detected": 100,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "database_url_with_password": {
+     "n": 100,
+     "detected": 100,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "high_entropy_base64": {
+     "n": 100,
+     "detected": 0,
+     "recall": 0.0,
+     "redaction_clean": null
+    },
+    "github_fine_grained_pat_bare": {
+     "n": 100,
+     "detected": 100,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "npm_token_bare": {
+     "n": 100,
+     "detected": 100,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "stripe_live_key_bare": {
+     "n": 100,
+     "detected": 100,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "twilio_key": {
+     "n": 100,
+     "detected": 100,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "short_password_under_8": {
+     "n": 100,
+     "detected": 0,
+     "recall": 0.0,
+     "redaction_clean": null
+    },
+    "secret_in_url_query": {
+     "n": 100,
+     "detected": 100,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    }
+   },
+   "lookalikes": {
+    "n": 20,
+    "false_positives": []
+   },
+   "redaction": {},
+   "corpora": {
+    "python_stdlib": {
+     "files": 455,
+     "lines": 230346,
+     "mb": 8.541566,
+     "seconds": 1.1833541669766419,
+     "mb_per_s": 7.218097707656613,
+     "flagged": 3,
+     "flagged_samples": [
+      [
+       "opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/getpass.py",
+       202,
+       "generic-secret",
+       "passwd = passwd[:-1]"
+      ],
+      [
+       "opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/plistlib.py",
+       551,
+       "generic-secret",
+       "token = self._fp.read(1)[0]"
+      ],
+      [
+       "opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/_pyrepl/_module_completer.py",
+       253,
+       "generic-secret",
+       "self.tokens = TokenQueue(tokens[::-1])"
+      ]
+     ]
+    },
+    "contextbridge_repo": {
+     "files": 30,
+     "lines": 2176,
+     "mb": 0.102093,
+     "seconds": 0.021280333981849253,
+     "mb_per_s": 4.797528088002694,
+     "flagged": 1,
+     "flagged_samples": [
+      [
+       "tests/test_e2e.py",
+       105,
+       "generic-secret",
+       "r.write(\".env\", \"TOKEN=abc12345xyz\\n\")"
+      ]
+     ]
+    }
+   }
+  },
+  "growth": {
+   "evidence_growth": [
+    {
+     "runs": 25,
+     "state_json_bytes": 8430,
+     "handoff_md_bytes": 1689,
+     "save_s": 0.12803312498726882
+    },
+    {
+     "runs": 100,
+     "state_json_bytes": 32508,
+     "handoff_md_bytes": 1690,
+     "save_s": 0.13042991698603146
+    },
+    {
+     "runs": 250,
+     "state_json_bytes": 80818,
+     "handoff_md_bytes": 1699,
+     "save_s": 0.2204554580093827
+    },
+    {
+     "runs": 500,
+     "state_json_bytes": 161442,
+     "handoff_md_bytes": 1699,
+     "save_s": 0.34271595798782073
+    }
+   ],
+   "handoff_size": [
+    {
+     "work_items": 10,
+     "handoff_md_bytes": 2055,
+     "handoff_est_tokens": 513,
+     "resume_prompt_bytes": 3254,
+     "resume_prompt_est_tokens": 813,
+     "gate_only_bytes": 811
+    },
+    {
+     "work_items": 100,
+     "handoff_md_bytes": 10172,
+     "handoff_est_tokens": 2543,
+     "resume_prompt_bytes": 11397,
+     "resume_prompt_est_tokens": 2849,
+     "gate_only_bytes": 837
+    },
+    {
+     "work_items": 500,
+     "handoff_md_bytes": 10402,
+     "handoff_est_tokens": 2600,
+     "resume_prompt_bytes": 11628,
+     "resume_prompt_est_tokens": 2907,
+     "gate_only_bytes": 838
+    }
+   ]
+  }
+ },
+ "v2": {
+  "meta": {
+   "date": "2026-10-12",
+   "commit": "30c2b62",
+   "dirty_tree": false,
+   "version": "0.3.2",
+   "python": "3.14.6",
+   "git": "git version 2.51.0",
+   "os": "Darwin 25.6.0 arm64",
+   "cpu": "Apple M3",
+   "cores": 8,
+   "fuzz_trials": 400
+  },
+  "scenarios_ext": [
+   {
+    "id": "touch_mtime_only",
+    "description": "touch a tracked file (mtime only)",
+    "family": "no-op",
+    "expected": "READY",
+    "got": "READY",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "top_finding": null,
+    "seconds": 0.6252720420015976
+   },
+   {
+    "id": "git_gc",
+    "description": "run git gc",
+    "family": "no-op",
+    "expected": "READY",
+    "got": "READY",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "top_finding": null,
+    "seconds": 0.7419352090219036
+   },
+   {
+    "id": "add_lightweight_tag",
+    "description": "add a tag",
+    "family": "no-op",
+    "expected": "READY",
+    "got": "READY",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "top_finding": null,
+    "seconds": 0.5803305419976823
+   },
+   {
+    "id": "checkout_same_branch",
+    "description": "git checkout main (already on it)",
+    "family": "no-op",
+    "expected": "READY",
+    "got": "READY",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "top_finding": null,
+    "seconds": 0.5760480419849046
+   },
+   {
+    "id": "worktree_added",
+    "description": "git worktree add in a sibling dir",
+    "family": "no-op",
+    "expected": "READY",
+    "got": "READY",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "top_finding": null,
+    "seconds": 0.5854972910019569
+   },
+   {
+    "id": "ignored_200_files",
+    "description": "200 files under a gitignored dir",
+    "family": "privacy / ignore",
+    "expected": "READY",
+    "got": "READY",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "top_finding": null,
+    "seconds": 0.5901880000019446
+   },
+   {
+    "id": "env_local_file",
+    "description": "create .env.local",
+    "family": "privacy / ignore",
+    "expected": "READY",
+    "got": "READY",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "top_finding": null,
+    "seconds": 0.5733161670214031
+   },
+   {
+    "id": "pem_file",
+    "description": "create server.pem",
+    "family": "privacy / ignore",
+    "expected": "READY",
+    "got": "READY",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "top_finding": null,
+    "seconds": 0.5915693339775316
+   },
+   {
+    "id": "credentials_json",
+    "description": "create credentials.json",
+    "family": "privacy / ignore",
+    "expected": "READY",
+    "got": "READY",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "top_finding": null,
+    "seconds": 0.6671171250054613
+   },
+   {
+    "id": "custom_ignore_pattern",
+    "description": "create a file matching .contextbridgeignore",
+    "family": "privacy / ignore",
+    "expected": "READY",
+    "got": "READY",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "top_finding": null,
+    "seconds": 0.5680738330120221
+   },
+   {
+    "id": "edit_then_restore",
+    "description": "edit a file then git checkout -- file",
+    "family": "net-zero",
+    "expected": "READY",
+    "got": "READY",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "top_finding": null,
+    "seconds": 0.5843720830162056
+   },
+   {
+    "id": "add_then_delete_untracked",
+    "description": "create then delete an untracked file",
+    "family": "net-zero",
+    "expected": "READY",
+    "got": "READY",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "top_finding": null,
+    "seconds": 0.5653456250147428
+   },
+   {
+    "id": "commit_then_hard_reset_back",
+    "description": "commit then reset --hard HEAD~1",
+    "family": "net-zero",
+    "expected": "READY",
+    "got": "READY",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "top_finding": null,
+    "seconds": 0.6044803750119172
+   },
+   {
+    "id": "edit_10_files",
+    "description": "edit 10 tracked-style files",
+    "family": "file change",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": "new uncommitted change",
+    "finding_ok": true,
+    "top_finding": "src/e0.py: new uncommitted change since checkpoint",
+    "seconds": 0.6670084999932442
+   },
+   {
+    "id": "edit_50_untracked",
+    "description": "50 new untracked files",
+    "family": "file change",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": "new uncommitted change",
+    "finding_ok": true,
+    "top_finding": "gen/f0.txt: new uncommitted change since checkpoint",
+    "seconds": 0.9608035829733126
+   },
+   {
+    "id": "untracked_1000_files",
+    "description": "1000 new untracked files",
+    "family": "scale",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": "new uncommitted change",
+    "finding_ok": true,
+    "top_finding": "gen/f0.txt: new uncommitted change since checkpoint",
+    "seconds": 5.693151292012772
+   },
+   {
+    "id": "large_file_20mb",
+    "description": "add a 20 MB file",
+    "family": "scale",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": "big.bin",
+    "finding_ok": true,
+    "top_finding": "big.bin: new uncommitted change since checkpoint",
+    "seconds": 3.225435792002827
+   },
+   {
+    "id": "crlf_conversion",
+    "description": "rewrite a file with CRLF line endings",
+    "family": "file change",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "top_finding": "src/a.py: new uncommitted change since checkpoint",
+    "seconds": 1.1170756249921396
+   },
+   {
+    "id": "file_becomes_directory",
+    "description": "delete src/b.py, create directory src/b.py/",
+    "family": "file change",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "top_finding": "src/b.py: new uncommitted change since checkpoint",
+    "seconds": 1.0851012500061188
+   },
+   {
+    "id": "case_only_rename",
+    "description": "git mv README.md Readme.md",
+    "family": "file change",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "top_finding": "Readme.md: new uncommitted change since checkpoint",
+    "seconds": 1.1239918750070501
+   },
+   {
+    "id": "newline_in_filename",
+    "description": "file name containing a newline",
+    "family": "file change",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "top_finding": "we\nird.txt: new uncommitted change since checkpoint",
+    "seconds": 1.0920332910027355
+   },
+   {
+    "id": "empty_commit",
+    "description": "git commit --allow-empty",
+    "family": "history",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": "commit(s) since",
+    "finding_ok": true,
+    "top_finding": "1 commit(s) since checkpoint (22d5dd2a -> cd81ead1)",
+    "seconds": 1.115439957997296
+   },
+   {
+    "id": "merge_commit",
+    "description": "no-ff merge of a side branch",
+    "family": "history",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": "commit(s) since",
+    "finding_ok": true,
+    "top_finding": "2 commit(s) since checkpoint (dcc89498 -> 5a4987ae)",
+    "seconds": 1.1752065419859719
+   },
+   {
+    "id": "fast_forward",
+    "description": "fast-forward main to a side branch",
+    "family": "history",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": "commit(s) since",
+    "finding_ok": true,
+    "top_finding": "1 commit(s) since checkpoint (b270b64a -> de49d49b)",
+    "seconds": 1.2033450829912908
+   },
+   {
+    "id": "cherry_pick",
+    "description": "cherry-pick a side-branch commit",
+    "family": "history",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": "commit(s) since",
+    "finding_ok": true,
+    "top_finding": "1 commit(s) since checkpoint (de219213 -> b728c3b9)",
+    "seconds": 1.3930474579974543
+   },
+   {
+    "id": "commit_then_revert",
+    "description": "commit then git revert it",
+    "family": "history",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": "commit(s) since",
+    "finding_ok": true,
+    "top_finding": "2 commit(s) since checkpoint (4dc1c6b9 -> a6b28d57)",
+    "seconds": 1.5254210839921143
+   },
+   {
+    "id": "stash_pop_roundtrip",
+    "description": "edit, stash, stash pop",
+    "family": "history",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "top_finding": "src/a.py: new uncommitted change since checkpoint",
+    "seconds": 1.201107500004582
+   },
+   {
+    "id": "soft_reset_keeps_changes",
+    "description": "commit then reset --soft HEAD~1",
+    "family": "history",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "top_finding": "README.md: new uncommitted change since checkpoint",
+    "seconds": 1.4480057079927064
+   },
+   {
+    "id": "main_moved_unrelated",
+    "description": "force main onto an unrelated commit",
+    "family": "history",
+    "expected": "BLOCKED",
+    "got": "BLOCKED",
+    "verdict_ok": true,
+    "finding_expected": "not an ancestor",
+    "finding_ok": true,
+    "top_finding": "checkpoint commit f6c2f14b is not an ancestor of HEAD (rebase, force-push or different branch); file comparison is unreliable",
+    "seconds": 1.3524117500055581
+   },
+   {
+    "id": "detached_at_older_commit",
+    "description": "detach at the root commit",
+    "family": "history",
+    "expected": "BLOCKED",
+    "got": "BLOCKED",
+    "verdict_ok": true,
+    "finding_expected": "branch changed",
+    "finding_ok": true,
+    "top_finding": "branch changed: main -> (detached)",
+    "seconds": 0.6813584580086172
+   },
+   {
+    "id": "orphan_branch",
+    "description": "checkout --orphan",
+    "family": "history",
+    "expected": "BLOCKED",
+    "got": "BLOCKED",
+    "verdict_ok": true,
+    "finding_expected": "branch changed",
+    "finding_ok": true,
+    "top_finding": "branch changed: main -> fresh",
+    "seconds": 1.0091452499909792
+   },
+   {
+    "id": "delete_original_branch",
+    "description": "move to tmp and delete main",
+    "family": "history",
+    "expected": "BLOCKED",
+    "got": "BLOCKED",
+    "verdict_ok": true,
+    "finding_expected": "branch changed",
+    "finding_ok": true,
+    "top_finding": "branch changed: main -> tmp",
+    "seconds": 1.308526333014015
+   },
+   {
+    "id": "state_empty_object",
+    "description": "state.json is {}",
+    "family": "state",
+    "expected": "BLOCKED",
+    "got": "BLOCKED",
+    "verdict_ok": true,
+    "finding_expected": "no checkpoint",
+    "finding_ok": true,
+    "top_finding": "no checkpoint found; create one with `contextbridge save` in the original session",
+    "seconds": 1.0236172500008252
+   },
+   {
+    "id": "state_snapshot_null",
+    "description": "state.json snapshot is null",
+    "family": "state",
+    "expected": "BLOCKED",
+    "got": "BLOCKED",
+    "verdict_ok": true,
+    "finding_expected": "no checkpoint",
+    "finding_ok": true,
+    "top_finding": "no checkpoint found; create one with `contextbridge save` in the original session",
+    "seconds": 1.013438333000522
+   },
+   {
+    "id": "graph_corrupt",
+    "description": "graph.json corrupt",
+    "family": "state",
+    "expected": "BLOCKED",
+    "got": "BLOCKED",
+    "verdict_ok": true,
+    "finding_expected": "not valid JSON",
+    "finding_ok": true,
+    "top_finding": "contextbridge/graph.json is not valid JSON (Expecting property name enclosed in double quotes: line 1 column 2 (char 1)); fix or delete it",
+    "seconds": 0.9607773330062628
+   },
+   {
+    "id": "sessions_corrupt",
+    "description": "sessions.json corrupt",
+    "family": "state",
+    "expected": "BLOCKED",
+    "got": "BLOCKED",
+    "verdict_ok": true,
+    "finding_expected": "not valid JSON",
+    "finding_ok": true,
+    "top_finding": "contextbridge/sessions.json is not valid JSON (Expecting value: line 1 column 4 (char 3)); fix or delete it",
+    "seconds": 0.9122513749753125
+   },
+   {
+    "id": "state_wrong_type",
+    "description": "state.json is a JSON list",
+    "family": "state",
+    "expected": "BLOCKED",
+    "got": "CRASH:Traceback (most recent call last):\n  File \"<frozen runpy>\", line 203, in _run_module_as_ma",
+    "verdict_ok": false,
+    "finding_expected": null,
+    "finding_ok": true,
+    "top_finding": null,
+    "seconds": 0.9041615000169259
+   },
+   {
+    "id": "assumption_file_renamed",
+    "description": "the assumed file is renamed",
+    "family": "assumption",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": "no longer exists",
+    "finding_ok": true,
+    "top_finding": "A1 'a() exists': src/a.py no longer exists",
+    "seconds": 0.9484675410203636
+   },
+   {
+    "id": "decision_test_changed",
+    "description": "a decision's test file is edited",
+    "family": "graph",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": "revisit decision",
+    "finding_ok": true,
+    "top_finding": "tests/test_a.py: new uncommitted change since checkpoint",
+    "seconds": 0.956680959003279
+   },
+   {
+    "id": "session_overlap_modified",
+    "description": "modify a file claimed by two sessions",
+    "family": "sessions",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": "both claims cover modified files",
+    "finding_ok": true,
+    "top_finding": "src/auth/x.py: new uncommitted change since checkpoint",
+    "seconds": 1.300634999992326
+   },
+   {
+    "id": "stash_u_removes_untracked_notes",
+    "description": "git stash -u while notes are untracked",
+    "family": "notes safety",
+    "expected": "BLOCKED",
+    "got": "BLOCKED",
+    "verdict_ok": true,
+    "finding_expected": "no checkpoint",
+    "finding_ok": true,
+    "top_finding": "no checkpoint found; create one with `contextbridge save` in the original session",
+    "seconds": 1.124245291983243
+   },
+   {
+    "id": "stash_u_with_local_only",
+    "description": "git stash -u when notes use init --local-only",
+    "family": "notes safety",
+    "expected": "READY",
+    "got": "READY",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "top_finding": null,
+    "seconds": 1.5085995830013417
+   },
+   {
+    "id": "git_clean_fd_removes_notes",
+    "description": "git clean -fd while notes are untracked",
+    "family": "notes safety",
+    "expected": "BLOCKED",
+    "got": "BLOCKED",
+    "verdict_ok": true,
+    "finding_expected": "no checkpoint",
+    "finding_ok": true,
+    "top_finding": "no checkpoint found; create one with `contextbridge save` in the original session",
+    "seconds": 1.1275013750127982
+   },
+   {
+    "id": "git_clean_fd_with_local_only",
+    "description": "git clean -fd when notes use init --local-only",
+    "family": "notes safety",
+    "expected": "READY",
+    "got": "READY",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "top_finding": null,
+    "seconds": 1.2004432500107214
+   },
+   {
+    "id": "wip_survives_untouched",
+    "description": "WIP file left exactly as at checkpoint",
+    "family": "control",
+    "expected": "READY",
+    "got": "READY",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "top_finding": null,
+    "seconds": 1.0940264590026345
+   },
+   {
+    "id": "wip_plus_new_file",
+    "description": "WIP file plus one new file",
+    "family": "file change",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": "new uncommitted change",
+    "finding_ok": true,
+    "top_finding": "n.txt: new uncommitted change since checkpoint",
+    "seconds": 1.1456225409929175
+   },
+   {
+    "id": "no_evidence_no_claim_edit",
+    "description": "no tests ever recorded, then an edit",
+    "family": "evidence",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "top_finding": "src/a.py: new uncommitted change since checkpoint",
+    "seconds": 1.3502076659933664
+   }
+  ],
+  "fuzz": {
+   "trials": 800,
+   "agree": 799,
+   "confusion": {
+    "BLOCKED->BLOCKED": 280,
+    "READY->READY": 147,
+    "REVIEW_REQUIRED->BLOCKED": 1,
+    "REVIEW_REQUIRED->REVIEW_REQUIRED": 372
+   },
+   "disagreements": [
+    {
+     "trial": 169,
+     "ops": [
+      "commit",
+      "env",
+      "edit",
+      "delete"
+     ],
+     "oracle": "REVIEW_REQUIRED",
+     "tool": "BLOCKED",
+     "findings": [
+      "contextbridge/graph.json is not valid JSON (Extra data: line 47 column 1 (char 835)); fix or delete it"
+     ],
+     "seed": 20261012,
+     "explained": "The random 'edit' step appended text to a notes file under contextbridge/ that an earlier `git add -A` had committed. The tool correctly returned BLOCKED (corrupt notes); the oracle only checks that state.json exists. Harness artifact, not a tool bug. Later seeds exclude the notes from edit targets."
+    }
+   ],
+   "disagreement_count": 1,
+   "mean_ops": 2.98625,
+   "seeds": [
+    20261012,
+    777
+   ],
+   "by_seed": [
+    {
+     "seed": 20261012,
+     "trials": 400,
+     "agree": 399,
+     "exclude_notes": false
+    },
+    {
+     "seed": 777,
+     "trials": 400,
+     "agree": 400,
+     "exclude_notes": true
+    }
+   ],
+   "agreement": 0.99875,
+   "unexplained": 0
+  },
+  "concurrency": [
+   {
+    "workers": 2,
+    "runs_each": 10,
+    "expected": 20,
+    "recorded": 10,
+    "unique_ids": 10,
+    "state_valid_json": true,
+    "lost": 10,
+    "seconds": 0.964020416024141
+   },
+   {
+    "workers": 4,
+    "runs_each": 10,
+    "expected": 40,
+    "recorded": 10,
+    "unique_ids": 10,
+    "state_valid_json": true,
+    "lost": 30,
+    "seconds": 1.1281000419985503
+   },
+   {
+    "workers": 8,
+    "runs_each": 5,
+    "expected": 40,
+    "recorded": 5,
+    "unique_ids": 5,
+    "state_valid_json": true,
+    "lost": 35,
+    "seconds": 0.8592319999879692
+   }
+  ],
+  "scanner": {
+   "covered": {
+    "aws_access_key": {
+     "n": 1000,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "aws_temp_key": {
+     "n": 1000,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "github_pat_classic": {
+     "n": 1000,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "github_oauth": {
+     "n": 1000,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "github_fine_grained": {
+     "n": 1000,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "slack_bot": {
+     "n": 1000,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "google_api": {
+     "n": 1000,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "openai_sk": {
+     "n": 1000,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "anthropic_sk": {
+     "n": 1000,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "stripe_live": {
+     "n": 1000,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "stripe_test": {
+     "n": 1000,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "stripe_restricted": {
+     "n": 1000,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "sendgrid": {
+     "n": 1000,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "npm": {
+     "n": 1000,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "twilio": {
+     "n": 1000,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "jwt": {
+     "n": 1000,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "pem_rsa": {
+     "n": 1000,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "pem_openssh": {
+     "n": 1000,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "azure_account_key": {
+     "n": 1000,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "db_url_password": {
+     "n": 1000,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "mongodb_srv": {
+     "n": 1000,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "password_assign": {
+     "n": 1000,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "api_key_json": {
+     "n": 1000,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "token_env": {
+     "n": 1000,
+     "recall": 0.998,
+     "redaction_clean": 1.0
+    }
+   },
+   "gaps": {
+    "high_entropy_hex_32": {
+     "n": 1000,
+     "recall": 0.0,
+     "redaction_clean": null
+    },
+    "high_entropy_base64_44": {
+     "n": 1000,
+     "recall": 0.0,
+     "redaction_clean": null
+    },
+    "gcp_service_account_private_key_id": {
+     "n": 1000,
+     "recall": 0.0,
+     "redaction_clean": null
+    },
+    "short_password_7": {
+     "n": 1000,
+     "recall": 0.0,
+     "redaction_clean": null
+    },
+    "heroku_api_key_uuid": {
+     "n": 1000,
+     "recall": 0.0,
+     "redaction_clean": null
+    },
+    "digitalocean_pat": {
+     "n": 1000,
+     "recall": 0.0,
+     "redaction_clean": null
+    },
+    "shopify_token": {
+     "n": 1000,
+     "recall": 0.0,
+     "redaction_clean": null
+    },
+    "mailchimp_key": {
+     "n": 1000,
+     "recall": 0.0,
+     "redaction_clean": null
+    },
+    "telegram_bot_token": {
+     "n": 1000,
+     "recall": 0.0,
+     "redaction_clean": null
+    }
+   },
+   "corpora": {
+    "python_stdlib_all": {
+     "files": 1852,
+     "lines": 979577,
+     "mb": 36.036124,
+     "seconds": 5.255633166991174,
+     "mb_per_s": 6.856666524279227,
+     "flagged": 24,
+     "per_million_lines": 24.50037107853696,
+     "samples": [
+      [
+       "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/_pyrepl/_module_completer.py",
+       253,
+       "generic-secret",
+       "self.tokens = TokenQueue(tokens[::-1])"
+      ],
+      [
+       "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/getpass.py",
+       202,
+       "generic-secret",
+       "passwd = passwd[:-1]"
+      ],
+      [
+       "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/plistlib.py",
+       551,
+       "generic-secret",
+       "token = self._fp.read(1)[0]"
+      ],
+      [
+       "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/test/test_capi/test_type.py",
+       141,
+       "generic-secret",
+       "tokenA1 = get_token(A1)"
+      ],
+      [
+       "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/test/test_context.py",
+       494,
+       "generic-secret",
+       "token = c.set(36)"
+      ],
+      [
+       "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/test/test_context.py",
+       550,
+       "generic-secret",
+       "token = c.set(24)"
+      ],
+      [
+       "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/test/test_email/test__header_value_parser.py",
+       3461,
+       "generic-secret",
+       "token = parser.get_address_list(text)[0]"
+      ],
+      [
+       "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/test/test_getpass.py",
+       181,
+       "generic-secret",
+       "passwd = 'my1pa$$word!'"
+      ],
+      [
+       "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/test/test_getpass.py",
+       201,
+       "generic-secret",
+       "self.assertEqual('Password: *******\\x08 \\x08', mock_output.getvalue())"
+      ],
+      [
+       "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/test/test_smtplib.py",
+       911,
+       "generic-secret",
+       "password = self._decode_base64(arg)"
+      ],
+      [
+       "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/test/test_smtplib.py",
+       1247,
+       "generic-secret",
+       "smtp.user, smtp.password = sim_auth[0], sim_auth[1]"
+      ],
+      [
+       "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/test/test_tokenize.py",
+       1345,
+       "generic-secret",
+       "extra_tokens=True))[:-2]"
+      ]
+     ]
+    },
+    "node_modules_js_sample": {
+     "files": 3999,
+     "lines": 758396,
+     "mb": 39.342794,
+     "seconds": 5.665584458998637,
+     "mb_per_s": 6.944172182891371,
+     "flagged": 59,
+     "per_million_lines": 77.79576896502618,
+     "samples": [
+      [
+       "/Users/abhinay/Abhi/Projects/contextbridge-site/node_modules/typescript/lib/_tsserver.js",
+       286,
+       "generic-secret",
+       "const cancellationToken = createCancellationToken(sys4.args);"
+      ],
+      [
+       "/Users/abhinay/Abhi/Projects/contextbridge-site/node_modules/next/dist/server/accept-header.js",
+       52,
+       "generic-secret",
+       "let token = params[0].toLowerCase();"
+      ],
+      [
+       "/Users/abhinay/Abhi/Projects/contextbridge-site/node_modules/next/dist/build/polyfills/polyfill-nomodule.js",
+       1,
+       "generic-secret",
+       "!function(){var t=\"undefined\"!=typeof globalThis?globalThis:\"undefined\"!=typeof window?window:\"undef"
+      ],
+      [
+       "/Users/abhinay/Abhi/Projects/contextbridge-site/node_modules/next/dist/compiled/acorn/acorn.js",
+       1,
+       "generic-secret",
+       "(()=>{var e={533:function(e,t){(function(e,i){true?i(t):0})(this,(function(e){\"use strict\";var t=[50"
+      ],
+      [
+       "/Users/abhinay/Abhi/Projects/contextbridge-site/node_modules/next/dist/compiled/acorn/acorn.js",
+       1,
+       "generic-secret",
+       "(()=>{var e={533:function(e,t){(function(e,i){true?i(t):0})(this,(function(e){\"use strict\";var t=[50"
+      ],
+      [
+       "/Users/abhinay/Abhi/Projects/contextbridge-site/node_modules/next/dist/compiled/acorn/acorn.js",
+       1,
+       "generic-secret",
+       "(()=>{var e={533:function(e,t){(function(e,i){true?i(t):0})(this,(function(e){\"use strict\";var t=[50"
+      ],
+      [
+       "/Users/abhinay/Abhi/Projects/contextbridge-site/node_modules/next/dist/compiled/acorn/acorn.js",
+       1,
+       "generic-secret",
+       "(()=>{var e={533:function(e,t){(function(e,i){true?i(t):0})(this,(function(e){\"use strict\";var t=[50"
+      ],
+      [
+       "/Users/abhinay/Abhi/Projects/contextbridge-site/node_modules/next/dist/compiled/picomatch/index.js",
+       1,
+       "generic-secret",
+       "(()=>{\"use strict\";var t={170:(t,e,u)=>{const n=u(510);const isWindows=()=>{if(typeof navigator!==\"u"
+      ],
+      [
+       "/Users/abhinay/Abhi/Projects/contextbridge-site/node_modules/next/dist/compiled/comment-json/index.js",
+       1,
+       "generic-secret",
+       "(()=>{var e={281:(e,t,i)=>{const r=i(277);const{isObject:s,isArray:n}=i(504);const a=\"before\";const "
+      ],
+      [
+       "/Users/abhinay/Abhi/Projects/contextbridge-site/node_modules/next/dist/compiled/comment-json/index.js",
+       1,
+       "generic-secret",
+       "(()=>{var e={281:(e,t,i)=>{const r=i(277);const{isObject:s,isArray:n}=i(504);const a=\"before\";const "
+      ],
+      [
+       "/Users/abhinay/Abhi/Projects/contextbridge-site/node_modules/next/dist/compiled/comment-json/index.js",
+       1,
+       "generic-secret",
+       "(()=>{var e={281:(e,t,i)=>{const r=i(277);const{isObject:s,isArray:n}=i(504);const a=\"before\";const "
+      ],
+      [
+       "/Users/abhinay/Abhi/Projects/contextbridge-site/node_modules/next/dist/compiled/comment-json/index.js",
+       1,
+       "generic-secret",
+       "(()=>{var e={281:(e,t,i)=>{const r=i(277);const{isObject:s,isArray:n}=i(504);const a=\"before\";const "
+      ]
+     ]
+    },
+    "package_lock_files": {
+     "files": 5,
+     "lines": 47714,
+     "mb": 1.690789,
+     "seconds": 0.20889549999265,
+     "mb_per_s": 8.093946495063276,
+     "flagged": 0,
+     "per_million_lines": 0.0,
+     "samples": []
+    },
+    "markdown_docs": {
+     "files": 27,
+     "lines": 2085,
+     "mb": 0.107113,
+     "seconds": 0.02274641700205393,
+     "mb_per_s": 4.709005378312023,
+     "flagged": 1,
+     "per_million_lines": 479.6163069544365,
+     "samples": [
+      [
+       "/Users/abhinay/Abhi/Projects/krishisetu/README.md",
+       172,
+       "generic-secret",
+       "-d '{\"email\":\"ravi.kumar@example.com\",\"password\":\"password123\"}' \\"
+      ]
+     ]
+    }
+   }
+  },
+  "tokens": {
+   "per_scenario": [
+    {
+     "id": "touch_mtime_only",
+     "kind": "gate",
+     "cl100k": 30,
+     "o200k": 30,
+     "chars": 158,
+     "est": 39
+    },
+    {
+     "id": "touch_mtime_only",
+     "kind": "full",
+     "cl100k": 467,
+     "o200k": 471,
+     "chars": 1722,
+     "est": 432
+    },
+    {
+     "id": "git_gc",
+     "kind": "gate",
+     "cl100k": 30,
+     "o200k": 30,
+     "chars": 158,
+     "est": 39
+    },
+    {
+     "id": "git_gc",
+     "kind": "full",
+     "cl100k": 468,
+     "o200k": 471,
+     "chars": 1722,
+     "est": 432
+    },
+    {
+     "id": "add_lightweight_tag",
+     "kind": "gate",
+     "cl100k": 30,
+     "o200k": 30,
+     "chars": 158,
+     "est": 39
+    },
+    {
+     "id": "add_lightweight_tag",
+     "kind": "full",
+     "cl100k": 467,
+     "o200k": 471,
+     "chars": 1722,
+     "est": 432
+    },
+    {
+     "id": "checkout_same_branch",
+     "kind": "gate",
+     "cl100k": 30,
+     "o200k": 30,
+     "chars": 158,
+     "est": 39
+    },
+    {
+     "id": "checkout_same_branch",
+     "kind": "full",
+     "cl100k": 467,
+     "o200k": 471,
+     "chars": 1722,
+     "est": 432
+    },
+    {
+     "id": "worktree_added",
+     "kind": "gate",
+     "cl100k": 30,
+     "o200k": 30,
+     "chars": 158,
+     "est": 39
+    },
+    {
+     "id": "worktree_added",
+     "kind": "full",
+     "cl100k": 467,
+     "o200k": 472,
+     "chars": 1722,
+     "est": 432
+    },
+    {
+     "id": "ignored_200_files",
+     "kind": "gate",
+     "cl100k": 30,
+     "o200k": 30,
+     "chars": 158,
+     "est": 39
+    },
+    {
+     "id": "ignored_200_files",
+     "kind": "full",
+     "cl100k": 468,
+     "o200k": 472,
+     "chars": 1722,
+     "est": 432
+    },
+    {
+     "id": "env_local_file",
+     "kind": "gate",
+     "cl100k": 30,
+     "o200k": 30,
+     "chars": 158,
+     "est": 39
+    },
+    {
+     "id": "env_local_file",
+     "kind": "full",
+     "cl100k": 468,
+     "o200k": 472,
+     "chars": 1722,
+     "est": 432
+    },
+    {
+     "id": "pem_file",
+     "kind": "gate",
+     "cl100k": 30,
+     "o200k": 30,
+     "chars": 158,
+     "est": 39
+    },
+    {
+     "id": "pem_file",
+     "kind": "full",
+     "cl100k": 468,
+     "o200k": 472,
+     "chars": 1722,
+     "est": 432
+    },
+    {
+     "id": "credentials_json",
+     "kind": "gate",
+     "cl100k": 30,
+     "o200k": 30,
+     "chars": 158,
+     "est": 39
+    },
+    {
+     "id": "credentials_json",
+     "kind": "full",
+     "cl100k": 468,
+     "o200k": 472,
+     "chars": 1722,
+     "est": 432
+    },
+    {
+     "id": "custom_ignore_pattern",
+     "kind": "gate",
+     "cl100k": 30,
+     "o200k": 30,
+     "chars": 158,
+     "est": 39
+    },
+    {
+     "id": "custom_ignore_pattern",
+     "kind": "full",
+     "cl100k": 467,
+     "o200k": 471,
+     "chars": 1722,
+     "est": 432
+    },
+    {
+     "id": "edit_then_restore",
+     "kind": "gate",
+     "cl100k": 30,
+     "o200k": 30,
+     "chars": 158,
+     "est": 39
+    },
+    {
+     "id": "edit_then_restore",
+     "kind": "full",
+     "cl100k": 468,
+     "o200k": 472,
+     "chars": 1722,
+     "est": 432
+    },
+    {
+     "id": "add_then_delete_untracked",
+     "kind": "gate",
+     "cl100k": 30,
+     "o200k": 30,
+     "chars": 158,
+     "est": 39
+    },
+    {
+     "id": "add_then_delete_untracked",
+     "kind": "full",
+     "cl100k": 468,
+     "o200k": 472,
+     "chars": 1722,
+     "est": 432
+    },
+    {
+     "id": "commit_then_hard_reset_back",
+     "kind": "gate",
+     "cl100k": 30,
+     "o200k": 30,
+     "chars": 158,
+     "est": 39
+    },
+    {
+     "id": "commit_then_hard_reset_back",
+     "kind": "full",
+     "cl100k": 468,
+     "o200k": 472,
+     "chars": 1722,
+     "est": 432
+    },
+    {
+     "id": "edit_10_files",
+     "kind": "gate",
+     "cl100k": 202,
+     "o200k": 211,
+     "chars": 828,
+     "est": 207
+    },
+    {
+     "id": "edit_10_files",
+     "kind": "full",
+     "cl100k": 640,
+     "o200k": 653,
+     "chars": 2392,
+     "est": 599
+    },
+    {
+     "id": "edit_50_untracked",
+     "kind": "gate",
+     "cl100k": 802,
+     "o200k": 851,
+     "chars": 3278,
+     "est": 819
+    },
+    {
+     "id": "edit_50_untracked",
+     "kind": "full",
+     "cl100k": 1240,
+     "o200k": 1293,
+     "chars": 4842,
+     "est": 1212
+    },
+    {
+     "id": "untracked_1000_files",
+     "kind": "gate",
+     "cl100k": 15052,
+     "o200k": 16051,
+     "chars": 62128,
+     "est": 15532
+    },
+    {
+     "id": "untracked_1000_files",
+     "kind": "full",
+     "cl100k": 15489,
+     "o200k": 16492,
+     "chars": 63692,
+     "est": 15924
+    },
+    {
+     "id": "large_file_20mb",
+     "kind": "gate",
+     "cl100k": 65,
+     "o200k": 65,
+     "chars": 295,
+     "est": 73
+    },
+    {
+     "id": "large_file_20mb",
+     "kind": "full",
+     "cl100k": 503,
+     "o200k": 506,
+     "chars": 1859,
+     "est": 466
+    },
+    {
+     "id": "crlf_conversion",
+     "kind": "gate",
+     "cl100k": 85,
+     "o200k": 85,
+     "chars": 367,
+     "est": 91
+    },
+    {
+     "id": "crlf_conversion",
+     "kind": "full",
+     "cl100k": 522,
+     "o200k": 526,
+     "chars": 1931,
+     "est": 484
+    },
+    {
+     "id": "file_becomes_directory",
+     "kind": "gate",
+     "cl100k": 114,
+     "o200k": 114,
+     "chars": 478,
+     "est": 119
+    },
+    {
+     "id": "file_becomes_directory",
+     "kind": "full",
+     "cl100k": 551,
+     "o200k": 555,
+     "chars": 2042,
+     "est": 512
+    },
+    {
+     "id": "case_only_rename",
+     "kind": "gate",
+     "cl100k": 66,
+     "o200k": 66,
+     "chars": 297,
+     "est": 74
+    },
+    {
+     "id": "case_only_rename",
+     "kind": "full",
+     "cl100k": 505,
+     "o200k": 509,
+     "chars": 1861,
+     "est": 466
+    },
+    {
+     "id": "newline_in_filename",
+     "kind": "gate",
+     "cl100k": 67,
+     "o200k": 67,
+     "chars": 298,
+     "est": 74
+    },
+    {
+     "id": "newline_in_filename",
+     "kind": "full",
+     "cl100k": 504,
+     "o200k": 508,
+     "chars": 1862,
+     "est": 467
+    },
+    {
+     "id": "empty_commit",
+     "kind": "gate",
+     "cl100k": 76,
+     "o200k": 75,
+     "chars": 298,
+     "est": 74
+    },
+    {
+     "id": "empty_commit",
+     "kind": "full",
+     "cl100k": 513,
+     "o200k": 516,
+     "chars": 1862,
+     "est": 467
+    },
+    {
+     "id": "merge_commit",
+     "kind": "gate",
+     "cl100k": 75,
+     "o200k": 74,
+     "chars": 298,
+     "est": 74
+    },
+    {
+     "id": "merge_commit",
+     "kind": "full",
+     "cl100k": 513,
+     "o200k": 516,
+     "chars": 1862,
+     "est": 467
+    },
+    {
+     "id": "fast_forward",
+     "kind": "gate",
+     "cl100k": 73,
+     "o200k": 72,
+     "chars": 298,
+     "est": 74
+    },
+    {
+     "id": "fast_forward",
+     "kind": "full",
+     "cl100k": 510,
+     "o200k": 513,
+     "chars": 1862,
+     "est": 467
+    },
+    {
+     "id": "cherry_pick",
+     "kind": "gate",
+     "cl100k": 76,
+     "o200k": 75,
+     "chars": 298,
+     "est": 74
+    },
+    {
+     "id": "cherry_pick",
+     "kind": "full",
+     "cl100k": 514,
+     "o200k": 517,
+     "chars": 1862,
+     "est": 467
+    },
+    {
+     "id": "commit_then_revert",
+     "kind": "gate",
+     "cl100k": 76,
+     "o200k": 75,
+     "chars": 298,
+     "est": 74
+    },
+    {
+     "id": "commit_then_revert",
+     "kind": "full",
+     "cl100k": 514,
+     "o200k": 517,
+     "chars": 1862,
+     "est": 467
+    },
+    {
+     "id": "stash_pop_roundtrip",
+     "kind": "gate",
+     "cl100k": 85,
+     "o200k": 85,
+     "chars": 367,
+     "est": 91
+    },
+    {
+     "id": "stash_pop_roundtrip",
+     "kind": "full",
+     "cl100k": 522,
+     "o200k": 526,
+     "chars": 1931,
+     "est": 484
+    },
+    {
+     "id": "soft_reset_keeps_changes",
+     "kind": "gate",
+     "cl100k": 65,
+     "o200k": 65,
+     "chars": 297,
+     "est": 74
+    },
+    {
+     "id": "soft_reset_keeps_changes",
+     "kind": "full",
+     "cl100k": 503,
+     "o200k": 507,
+     "chars": 1861,
+     "est": 466
+    },
+    {
+     "id": "main_moved_unrelated",
+     "kind": "gate",
+     "cl100k": 172,
+     "o200k": 172,
+     "chars": 694,
+     "est": 173
+    },
+    {
+     "id": "main_moved_unrelated",
+     "kind": "full",
+     "cl100k": 172,
+     "o200k": 172,
+     "chars": 694,
+     "est": 173
+    },
+    {
+     "id": "orphan_branch",
+     "kind": "gate",
+     "cl100k": 287,
+     "o200k": 295,
+     "chars": 1228,
+     "est": 307
+    },
+    {
+     "id": "orphan_branch",
+     "kind": "full",
+     "cl100k": 287,
+     "o200k": 295,
+     "chars": 1228,
+     "est": 307
+    },
+    {
+     "id": "delete_original_branch",
+     "kind": "gate",
+     "cl100k": 51,
+     "o200k": 51,
+     "chars": 232,
+     "est": 58
+    },
+    {
+     "id": "delete_original_branch",
+     "kind": "full",
+     "cl100k": 51,
+     "o200k": 51,
+     "chars": 232,
+     "est": 58
+    },
+    {
+     "id": "state_empty_object",
+     "kind": "gate",
+     "cl100k": 61,
+     "o200k": 61,
+     "chars": 286,
+     "est": 71
+    },
+    {
+     "id": "state_empty_object",
+     "kind": "full",
+     "cl100k": 61,
+     "o200k": 61,
+     "chars": 286,
+     "est": 71
+    },
+    {
+     "id": "state_snapshot_null",
+     "kind": "gate",
+     "cl100k": 61,
+     "o200k": 61,
+     "chars": 286,
+     "est": 71
+    },
+    {
+     "id": "state_snapshot_null",
+     "kind": "full",
+     "cl100k": 61,
+     "o200k": 61,
+     "chars": 286,
+     "est": 71
+    },
+    {
+     "id": "graph_corrupt",
+     "kind": "gate",
+     "cl100k": 78,
+     "o200k": 79,
+     "chars": 343,
+     "est": 85
+    },
+    {
+     "id": "graph_corrupt",
+     "kind": "full",
+     "cl100k": 78,
+     "o200k": 79,
+     "chars": 343,
+     "est": 85
+    },
+    {
+     "id": "sessions_corrupt",
+     "kind": "gate",
+     "cl100k": 74,
+     "o200k": 74,
+     "chars": 312,
+     "est": 78
+    },
+    {
+     "id": "sessions_corrupt",
+     "kind": "full",
+     "cl100k": 74,
+     "o200k": 74,
+     "chars": 312,
+     "est": 78
+    },
+    {
+     "id": "state_wrong_type",
+     "kind": "gate",
+     "cl100k": 0,
+     "o200k": 0,
+     "chars": 0,
+     "est": 0
+    },
+    {
+     "id": "state_wrong_type",
+     "kind": "full",
+     "cl100k": 0,
+     "o200k": 0,
+     "chars": 0,
+     "est": 0
+    },
+    {
+     "id": "assumption_file_renamed",
+     "kind": "gate",
+     "cl100k": 100,
+     "o200k": 100,
+     "chars": 393,
+     "est": 98
+    },
+    {
+     "id": "assumption_file_renamed",
+     "kind": "full",
+     "cl100k": 539,
+     "o200k": 542,
+     "chars": 1957,
+     "est": 490
+    },
+    {
+     "id": "decision_test_changed",
+     "kind": "gate",
+     "cl100k": 87,
+     "o200k": 87,
+     "chars": 381,
+     "est": 95
+    },
+    {
+     "id": "decision_test_changed",
+     "kind": "full",
+     "cl100k": 526,
+     "o200k": 529,
+     "chars": 1945,
+     "est": 487
+    },
+    {
+     "id": "session_overlap_modified",
+     "kind": "gate",
+     "cl100k": 101,
+     "o200k": 101,
+     "chars": 427,
+     "est": 106
+    },
+    {
+     "id": "session_overlap_modified",
+     "kind": "full",
+     "cl100k": 539,
+     "o200k": 543,
+     "chars": 1991,
+     "est": 499
+    },
+    {
+     "id": "stash_u_removes_untracked_notes",
+     "kind": "gate",
+     "cl100k": 61,
+     "o200k": 61,
+     "chars": 286,
+     "est": 71
+    },
+    {
+     "id": "stash_u_removes_untracked_notes",
+     "kind": "full",
+     "cl100k": 61,
+     "o200k": 61,
+     "chars": 286,
+     "est": 71
+    },
+    {
+     "id": "stash_u_with_local_only",
+     "kind": "gate",
+     "cl100k": 30,
+     "o200k": 30,
+     "chars": 158,
+     "est": 39
+    },
+    {
+     "id": "stash_u_with_local_only",
+     "kind": "full",
+     "cl100k": 466,
+     "o200k": 470,
+     "chars": 1722,
+     "est": 432
+    },
+    {
+     "id": "git_clean_fd_removes_notes",
+     "kind": "gate",
+     "cl100k": 61,
+     "o200k": 61,
+     "chars": 286,
+     "est": 71
+    },
+    {
+     "id": "git_clean_fd_removes_notes",
+     "kind": "full",
+     "cl100k": 61,
+     "o200k": 61,
+     "chars": 286,
+     "est": 71
+    },
+    {
+     "id": "git_clean_fd_with_local_only",
+     "kind": "gate",
+     "cl100k": 30,
+     "o200k": 30,
+     "chars": 158,
+     "est": 39
+    },
+    {
+     "id": "git_clean_fd_with_local_only",
+     "kind": "full",
+     "cl100k": 467,
+     "o200k": 471,
+     "chars": 1722,
+     "est": 432
+    },
+    {
+     "id": "wip_survives_untouched",
+     "kind": "gate",
+     "cl100k": 30,
+     "o200k": 30,
+     "chars": 158,
+     "est": 39
+    },
+    {
+     "id": "wip_survives_untouched",
+     "kind": "full",
+     "cl100k": 472,
+     "o200k": 476,
+     "chars": 1741,
+     "est": 436
+    },
+    {
+     "id": "wip_plus_new_file",
+     "kind": "gate",
+     "cl100k": 65,
+     "o200k": 65,
+     "chars": 293,
+     "est": 73
+    },
+    {
+     "id": "wip_plus_new_file",
+     "kind": "full",
+     "cl100k": 505,
+     "o200k": 509,
+     "chars": 1876,
+     "est": 470
+    },
+    {
+     "id": "no_evidence_no_claim_edit",
+     "kind": "gate",
+     "cl100k": 86,
+     "o200k": 86,
+     "chars": 352,
+     "est": 88
+    },
+    {
+     "id": "no_evidence_no_claim_edit",
+     "kind": "full",
+     "cl100k": 448,
+     "o200k": 451,
+     "chars": 1756,
+     "est": 440
+    }
+   ],
+   "scaling": [
+    {
+     "work_items": 10,
+     "handoff": 531,
+     "resume_full": 826,
+     "gate_only": 203,
+     "raw_state_json": 1058,
+     "handoff_o200k": 534,
+     "resume_full_o200k": 828,
+     "gate_o200k": 202
+    },
+    {
+     "work_items": 50,
+     "handoff": 1783,
+     "resume_full": 2092,
+     "gate_only": 217,
+     "raw_state_json": 4525,
+     "handoff_o200k": 1786,
+     "resume_full_o200k": 2094,
+     "gate_o200k": 216
+    },
+    {
+     "work_items": 100,
+     "handoff": 2621,
+     "resume_full": 2930,
+     "gate_only": 217,
+     "raw_state_json": 8851,
+     "handoff_o200k": 2624,
+     "resume_full_o200k": 2932,
+     "gate_o200k": 216
+    },
+    {
+     "work_items": 250,
+     "handoff": 2621,
+     "resume_full": 2930,
+     "gate_only": 217,
+     "raw_state_json": 21851,
+     "handoff_o200k": 2624,
+     "resume_full_o200k": 2932,
+     "gate_o200k": 216
+    },
+    {
+     "work_items": 500,
+     "handoff": 2623,
+     "resume_full": 2932,
+     "gate_only": 217,
+     "raw_state_json": 43523,
+     "handoff_o200k": 2626,
+     "resume_full_o200k": 2934,
+     "gate_o200k": 216
+    },
+    {
+     "work_items": 1000,
+     "handoff": 2622,
+     "resume_full": 2931,
+     "gate_only": 217,
+     "raw_state_json": 86857,
+     "handoff_o200k": 2625,
+     "resume_full_o200k": 2933,
+     "gate_o200k": 216
+    }
+   ],
+   "baseline": [
+    {
+     "repo": "ContextBridge (this tool)",
+     "tracked_files": 34,
+     "resume_full": 385,
+     "gate_only": 30,
+     "git_orientation_dump": 1800,
+     "file_listing": 203
+    },
+    {
+     "repo": "Orvantia website",
+     "tracked_files": 85,
+     "resume_full": 380,
+     "gate_only": 30,
+     "git_orientation_dump": 5922,
+     "file_listing": 745
+    },
+    {
+     "repo": "Orvantia OS",
+     "tracked_files": 480,
+     "resume_full": 378,
+     "gate_only": 30,
+     "git_orientation_dump": 6569,
+     "file_listing": 3797
+    }
+   ],
+   "summary_gate": {
+    "n": 45,
+    "median": 65,
+    "p90": 172,
+    "max": 15052,
+    "min": 30,
+    "mean": 417.8666666666667
+   },
+   "summary_full": {
+    "n": 45,
+    "median": 468,
+    "p90": 539,
+    "max": 15489,
+    "min": 51,
+    "mean": 766.4444444444445
+   },
+   "tokenizers": "cl100k_base and o200k_base (tiktoken) are proxies; Claude's tokenizer is not available offline. est = UTF-8 bytes / 4."
+  },
+  "io": {
+   "work_items": 500,
+   "export_s": 0.06711608299519867,
+   "import_s": 0.06790412499685772,
+   "bundle_bytes": 88474
+  },
+  "stability": {
+   "python": "3.14.6",
+   "runs": 15,
+   "passed": 15,
+   "tests_per_run": 31,
+   "seconds_median": 7.079288917011581,
+   "seconds_max": 7.5289105830015615,
+   "failures": []
+  },
+  "python_matrix": [
+   {
+    "python": "Python 3.11.13",
+    "runs": 3,
+    "passed": 3,
+    "tests": 31,
+    "seconds": 6.266898082976695,
+    "failures": []
+   },
+   {
+    "python": "Python 3.14.6",
+    "runs": 3,
+    "passed": 3,
+    "tests": 31,
+    "seconds": 6.970616082980996,
+    "failures": []
+   }
+  ],
+  "packaging": {
+   "build_ok": true,
+   "wheel_bytes": 23208,
+   "sdist_bytes": 32380,
+   "wheel_files": [
+    "contextbridge/__init__.py",
+    "contextbridge/__main__.py",
+    "contextbridge/cli.py",
+    "contextbridge/core.py",
+    "contextbridge/features.py",
+    "contextbridge_cli-0.3.2.dist-info/licenses/LICENSE",
+    "contextbridge_cli-0.3.2.dist-info/METADATA",
+    "contextbridge_cli-0.3.2.dist-info/WHEEL",
+    "contextbridge_cli-0.3.2.dist-info/entry_points.txt",
+    "contextbridge_cli-0.3.2.dist-info/top_level.txt",
+    "contextbridge_cli-0.3.2.dist-info/RECORD"
+   ],
+   "wheel_has_tests": false,
+   "installs": [
+    {
+     "python": "Python 3.11.13",
+     "install_ok": true,
+     "install_seconds": 0.9671122079889756,
+     "version_output": "0.3.2",
+     "startup_seconds": 0.03550187501241453,
+     "smoke_verdict_ok": true,
+     "runtime_dependencies": 0
+    },
+    {
+     "python": "Python 3.14.6",
+     "install_ok": true,
+     "install_seconds": 2.1151978749840055,
+     "version_output": "0.3.2",
+     "startup_seconds": 0.04370791697874665,
+     "smoke_verdict_ok": true,
+     "runtime_dependencies": 0
+    }
+   ],
+   "pyproject_version": "0.3.2"
+  }
+ },
+ "findings": [
+  {
+   "id": "N1",
+   "sev": "md",
+   "title": "Concurrent writers silently lose evidence",
+   "evidence": "8 parallel writers ran 40 test runs; only 5 were recorded (35 lost). state.json always stayed valid JSON because writes are atomic.",
+   "fix": "Lock the read-modify-write of the state files (flock on POSIX, msvcrt on Windows) and reload before each save."
+  },
+  {
+   "id": "N2",
+   "sev": "md",
+   "title": "A malformed state.json crashes `resume` instead of returning BLOCKED",
+   "evidence": "A state.json containing a JSON list produced a Python traceback (AttributeError: 'list' object has no attribute 'get') rather than a BLOCKED verdict.",
+   "fix": "Validate that the top level is an object when loading and route anything else to the existing 'not valid' BLOCKED path."
+  },
+  {
+   "id": "N3",
+   "sev": "lo",
+   "title": "Gate output is unbounded when many files change",
+   "evidence": "1,000 new untracked files produced 1,000 findings, about 15,052 tokens for `resume --check`. Typical runs are a median 65 tokens.",
+   "fix": "Summarize repeated findings: show the first few and a count, as the gate already does for unverified claims."
+  },
+  {
+   "id": "N4",
+   "sev": "lo",
+   "title": "`git stash -u` and `git clean -fd` delete untracked notes",
+   "evidence": "Both commands removed the untracked contextbridge/ folder; the gate then correctly returned BLOCKED (no checkpoint). With `init --local-only` the notes survived both.",
+   "fix": "Document it and recommend `init --local-only` or committing the notes."
+  },
+  {
+   "id": "N5",
+   "sev": "lo",
+   "title": "The generic secret rule flags ordinary code",
+   "evidence": "24 lines flagged in 979,577 lines of Python stdlib (25 per million) and 59 in sampled JavaScript (78 per million), for example `token = self._fp.read(1)[0]`.",
+   "fix": "Ignore right-hand sides that are calls or attribute lookups; keep the rule strict for quoted literals."
+  },
+  {
+   "id": "N6",
+   "sev": "lo",
+   "title": "Scanner has no pattern for several common key formats",
+   "evidence": "9 of 9 uncovered formats (Telegram, Shopify, DigitalOcean, Mailchimp, bare hex and base64 secrets\u2026) are never flagged, by design for the entropy-only ones.",
+   "fix": "Add dedicated patterns for vendor-prefixed formats; keep the best-effort wording."
+  }
+ ],
+ "before": {
+  "drift": [
+   {
+    "id": "no_change",
+    "description": "nothing changes after the checkpoint",
+    "category": "control",
+    "expected": "READY",
+    "got": "READY",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "exit_code": 0,
+    "top_finding": null
+   },
+   {
+    "id": "clone_same_history",
+    "description": "state copied to a fresh clone of the same repo",
+    "category": "portability",
+    "expected": "READY",
+    "got": "READY",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "exit_code": 0,
+    "top_finding": null
+   },
+   {
+    "id": "clone_extra_edit",
+    "description": "fresh clone plus a local uncommitted edit",
+    "category": "portability",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": "new uncommitted change",
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "src/a.py: new uncommitted change since checkpoint"
+   },
+   {
+    "id": "edit_tracked_file",
+    "description": "append to a tracked file (uncommitted)",
+    "category": "file change",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": "new uncommitted change",
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "src/a.py: new uncommitted change since checkpoint"
+   },
+   {
+    "id": "new_untracked_file",
+    "description": "create a new untracked file",
+    "category": "file change",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": "new uncommitted change",
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "src/new.py: new uncommitted change since checkpoint"
+   },
+   {
+    "id": "whitespace_only_edit",
+    "description": "whitespace-only edit",
+    "category": "file change",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "src/a.py: new uncommitted change since checkpoint"
+   },
+   {
+    "id": "chmod_only",
+    "description": "file mode change only",
+    "category": "file change",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "src/b.py: new uncommitted change since checkpoint"
+   },
+   {
+    "id": "delete_tracked_file",
+    "description": "delete a tracked, unrelated file",
+    "category": "file change",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "README.md: new uncommitted change since checkpoint"
+   },
+   {
+    "id": "delete_decision_code",
+    "description": "delete the file a decision points at",
+    "category": "graph",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": "no longer exists",
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "A1 'a() exists': src/a.py no longer exists"
+   },
+   {
+    "id": "one_new_commit",
+    "description": "one new unrelated commit",
+    "category": "history",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": "commit(s) since",
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "1 commit(s) since checkpoint (d9b60535 -> 53dbc2f5)"
+   },
+   {
+    "id": "five_new_commits",
+    "description": "five new commits",
+    "category": "history",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": "5 commit",
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "5 commit(s) since checkpoint (2fab6b52 -> f23fddcd)"
+   },
+   {
+    "id": "commit_touches_planned",
+    "description": "commit edits the planned task's file",
+    "category": "history",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": "feature B",
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "1 commit(s) since checkpoint (7f9faefb -> b1dd277f)"
+   },
+   {
+    "id": "assumption_text_removed",
+    "description": "assumed text removed from file",
+    "category": "assumption",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": "no longer contains",
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "A1 'a() exists': src/a.py no longer contains 'def a'"
+   },
+   {
+    "id": "branch_switch",
+    "description": "checkout a new branch",
+    "category": "history",
+    "expected": "BLOCKED",
+    "got": "BLOCKED",
+    "verdict_ok": true,
+    "finding_expected": "branch changed",
+    "finding_ok": true,
+    "exit_code": 2,
+    "top_finding": "branch changed: main -> other"
+   },
+   {
+    "id": "detached_head",
+    "description": "detach HEAD at same commit",
+    "category": "history",
+    "expected": "BLOCKED",
+    "got": "BLOCKED",
+    "verdict_ok": true,
+    "finding_expected": "branch changed",
+    "finding_ok": true,
+    "exit_code": 2,
+    "top_finding": "branch changed: main -> (detached)"
+   },
+   {
+    "id": "amend_head",
+    "description": "amend the checkpointed commit",
+    "category": "history",
+    "expected": "BLOCKED",
+    "got": "BLOCKED",
+    "verdict_ok": true,
+    "finding_expected": "not an ancestor",
+    "finding_ok": true,
+    "exit_code": 2,
+    "top_finding": "checkpoint commit 8c8ecb32 is not an ancestor of HEAD (rebase, force-push or different branch); file comparison is unreliable"
+   },
+   {
+    "id": "reset_hard_back",
+    "description": "reset --hard to the previous commit",
+    "category": "history",
+    "expected": "BLOCKED",
+    "got": "BLOCKED",
+    "verdict_ok": true,
+    "finding_expected": "not an ancestor",
+    "finding_ok": true,
+    "exit_code": 2,
+    "top_finding": "checkpoint commit da6b09e1 is not an ancestor of HEAD (rebase, force-push or different branch); file comparison is unreliable"
+   },
+   {
+    "id": "same_commit_new_branch_name",
+    "description": "rename branch (same commit)",
+    "category": "history",
+    "expected": "BLOCKED",
+    "got": "BLOCKED",
+    "verdict_ok": true,
+    "finding_expected": "branch changed",
+    "finding_ok": true,
+    "exit_code": 2,
+    "top_finding": "branch changed: main -> renamed"
+   },
+   {
+    "id": "edit_env_file",
+    "description": "create .env (excluded by default)",
+    "category": "privacy",
+    "expected": "READY",
+    "got": "READY",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "exit_code": 0,
+    "top_finding": null
+   },
+   {
+    "id": "edit_own_notes",
+    "description": "edit contextbridge/HANDOFF.md",
+    "category": "privacy",
+    "expected": "READY",
+    "got": "READY",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "exit_code": 0,
+    "top_finding": null
+   },
+   {
+    "id": "gitignored_change",
+    "description": "write a git-ignored build artifact",
+    "category": "blind spot",
+    "expected": "READY",
+    "got": "READY",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "exit_code": 0,
+    "top_finding": null
+   },
+   {
+    "id": "revert_wip_file",
+    "description": "WIP file reverted with git checkout",
+    "category": "file change",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "no passing test run matches the current workspace state; re-run tests before trusting 'done'"
+   },
+   {
+    "id": "stash_wip_file",
+    "description": "WIP file stashed",
+    "category": "file change",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "no passing test run matches the current workspace state; re-run tests before trusting 'done'"
+   },
+   {
+    "id": "commit_wip_file",
+    "description": "WIP file committed unchanged",
+    "category": "history",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": "commit(s) since",
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "1 commit(s) since checkpoint (1d747b27 -> ff0e6697)"
+   },
+   {
+    "id": "wip_edited_again",
+    "description": "WIP file edited further",
+    "category": "file change",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": "edited after checkpoint",
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "src/dirty.py: edited after checkpoint"
+   },
+   {
+    "id": "next_action_file_created",
+    "description": "create the file named by --next-path",
+    "category": "file change",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": "do next",
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "tests/test_new.py: new uncommitted change since checkpoint"
+   },
+   {
+    "id": "nested_git_repo_added",
+    "description": "a nested git repo appears as a new directory",
+    "category": "file change",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "vendor/lib/: new uncommitted change since checkpoint"
+   },
+   {
+    "id": "remote_ahead_unfetched",
+    "description": "teammate pushed to origin; local clone has not fetched",
+    "category": "blind spot (should warn)",
+    "expected": "REVIEW_REQUIRED",
+    "got": "READY",
+    "verdict_ok": false,
+    "finding_expected": null,
+    "finding_ok": true,
+    "exit_code": 0,
+    "top_finding": null
+   },
+   {
+    "id": "nested_repo_edited_after_checkpoint",
+    "description": "nested repo existed at checkpoint; edited and committed inside it afterwards",
+    "category": "blind spot (should warn)",
+    "expected": "REVIEW_REQUIRED",
+    "got": "READY",
+    "verdict_ok": false,
+    "finding_expected": null,
+    "finding_ok": true,
+    "exit_code": 0,
+    "top_finding": null
+   },
+   {
+    "id": "rename_file",
+    "description": "git mv a tracked file",
+    "category": "file change",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "src/b2.py: new uncommitted change since checkpoint"
+   },
+   {
+    "id": "symlink_added",
+    "description": "add a symlink to a file",
+    "category": "file change",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "src/link.py: new uncommitted change since checkpoint"
+   },
+   {
+    "id": "binary_file_added",
+    "description": "add a binary file",
+    "category": "file change",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "img.bin: new uncommitted change since checkpoint"
+   },
+   {
+    "id": "unicode_filename",
+    "description": "add a file with a non-ASCII, spaced name",
+    "category": "file change",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": null,
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "src/na\u00efve file \u00fc.py: new uncommitted change since checkpoint"
+   },
+   {
+    "id": "failed_run_after",
+    "description": "a test run fails after the checkpoint",
+    "category": "evidence",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": "FAILED",
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "last test run E2 `/opt/homebrew/opt/python@3.11/bin/python3.11 -c raise SystemExit(1) -y` FAILED (exit 1)"
+   },
+   {
+    "id": "unfinished_run",
+    "description": "a recorded run never finished",
+    "category": "evidence",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": "never finished",
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "E1 `/opt/homebrew/opt/python@3.11/bin/python3.11 -c pass -y` never finished (still running or interrupted)"
+   },
+   {
+    "id": "claim_without_any_run",
+    "description": "completed claim, zero test runs recorded",
+    "category": "evidence",
+    "expected": "REVIEW_REQUIRED",
+    "got": "REVIEW_REQUIRED",
+    "verdict_ok": true,
+    "finding_expected": "no test runs recorded",
+    "finding_ok": true,
+    "exit_code": 1,
+    "top_finding": "no test runs recorded; nothing is verified (use `contextbridge run -- <cmd>`)"
+   },
+   {
+    "id": "state_deleted",
+    "description": "contextbridge/state.json deleted",
+    "category": "state",
+    "expected": "BLOCKED",
+    "got": "BLOCKED",
+    "verdict_ok": true,
+    "finding_expected": "no checkpoint",
+    "finding_ok": true,
+    "exit_code": 2,
+    "top_finding": "no checkpoint found; create one with `contextbridge save` in the original session"
+   },
+   {
+    "id": "state_corrupt",
+    "description": "state.json truncated",
+    "category": "state",
+    "expected": "BLOCKED",
+    "got": "BLOCKED",
+    "verdict_ok": true,
+    "finding_expected": "not valid JSON",
+    "finding_ok": true,
+    "exit_code": 2,
+    "top_finding": "contextbridge/state.json is not valid JSON (Expecting value: line 1 column 12 (char 11)); fix or delete it"
+   },
+   {
+    "id": "state_wrong_schema",
+    "description": "state.json from a future schema",
+    "category": "state",
+    "expected": "BLOCKED",
+    "got": "BLOCKED",
+    "verdict_ok": true,
+    "finding_expected": "unsupported schema",
+    "finding_ok": true,
+    "exit_code": 2,
+    "top_finding": "unsupported schema 'contextbridge/9'"
+   }
+  ],
+  "scanner": {
+   "supported": {
+    "aws_access_key": {
+     "n": 100,
+     "detected": 100,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "github_token": {
+     "n": 100,
+     "detected": 100,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "slack_token": {
+     "n": 100,
+     "detected": 100,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "google_api_key": {
+     "n": 100,
+     "detected": 98,
+     "recall": 0.98,
+     "redaction_clean": 1.0
+    },
+    "openai_style_sk": {
+     "n": 100,
+     "detected": 100,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "anthropic_style_sk": {
+     "n": 100,
+     "detected": 100,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "jwt": {
+     "n": 100,
+     "detected": 100,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "pem_private_key": {
+     "n": 100,
+     "detected": 100,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "password_assignment": {
+     "n": 100,
+     "detected": 100,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "json_secret": {
+     "n": 100,
+     "detected": 100,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    }
+   },
+   "unsupported": {
+    "stripe_live_key": {
+     "n": 100,
+     "detected": 0,
+     "recall": 0.0,
+     "redaction_clean": null
+    },
+    "github_fine_grained_pat": {
+     "n": 100,
+     "detected": 100,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "sendgrid_key": {
+     "n": 100,
+     "detected": 0,
+     "recall": 0.0,
+     "redaction_clean": null
+    },
+    "npm_token": {
+     "n": 100,
+     "detected": 100,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "azure_connection_string": {
+     "n": 100,
+     "detected": 0,
+     "recall": 0.0,
+     "redaction_clean": null
+    },
+    "database_url_with_password": {
+     "n": 100,
+     "detected": 0,
+     "recall": 0.0,
+     "redaction_clean": null
+    },
+    "high_entropy_base64": {
+     "n": 100,
+     "detected": 0,
+     "recall": 0.0,
+     "redaction_clean": null
+    },
+    "github_fine_grained_pat_bare": {
+     "n": 100,
+     "detected": 0,
+     "recall": 0.0,
+     "redaction_clean": null
+    },
+    "npm_token_bare": {
+     "n": 100,
+     "detected": 0,
+     "recall": 0.0,
+     "redaction_clean": null
+    },
+    "stripe_live_key_bare": {
+     "n": 100,
+     "detected": 0,
+     "recall": 0.0,
+     "redaction_clean": null
+    },
+    "twilio_key": {
+     "n": 100,
+     "detected": 0,
+     "recall": 0.0,
+     "redaction_clean": null
+    },
+    "short_password_under_8": {
+     "n": 100,
+     "detected": 0,
+     "recall": 0.0,
+     "redaction_clean": null
+    },
+    "secret_in_url_query": {
+     "n": 100,
+     "detected": 100,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    }
+   },
+   "lookalikes": {
+    "n": 20,
+    "false_positives": []
+   },
+   "redaction": {},
+   "corpora": {
+    "python_stdlib": {
+     "files": 469,
+     "lines": 236978,
+     "mb": 8.767258,
+     "seconds": 0.7148280420224182,
+     "mb_per_s": 12.264849005077284,
+     "flagged": 1,
+     "flagged_samples": [
+      [
+       "opt/homebrew/Cellar/python@3.11/3.11.13/Frameworks/Python.framework/Versions/3.11/lib/python3.11/plistlib.py",
+       527,
+       "generic-secret",
+       "token = self._fp.read(1)[0]"
+      ]
+     ]
+    },
+    "contextbridge_repo": {
+     "files": 29,
+     "lines": 2014,
+     "mb": 0.092807,
+     "seconds": 0.01409054099349305,
+     "mb_per_s": 6.586475284579766,
+     "flagged": 1,
+     "flagged_samples": [
+      [
+       "tests/test_e2e.py",
+       105,
+       "generic-secret",
+       "r.write(\".env\", \"TOKEN=abc12345xyz\\n\")"
+      ]
+     ]
+    }
+   }
+  },
+  "growth": {
+   "evidence_growth": [
+    {
+     "runs": 25,
+     "state_json_bytes": 8430,
+     "handoff_md_bytes": 1689,
+     "save_s": 0.0994234999816399
+    },
+    {
+     "runs": 100,
+     "state_json_bytes": 32506,
+     "handoff_md_bytes": 1690,
+     "save_s": 0.10202433299855329
+    },
+    {
+     "runs": 250,
+     "state_json_bytes": 80806,
+     "handoff_md_bytes": 1699,
+     "save_s": 0.10728500000550412
+    },
+    {
+     "runs": 500,
+     "state_json_bytes": 161306,
+     "handoff_md_bytes": 1699,
+     "save_s": 0.11447283299639821
+    }
+   ],
+   "handoff_size": [
+    {
+     "work_items": 10,
+     "handoff_md_bytes": 2055,
+     "handoff_est_tokens": 513,
+     "resume_prompt_bytes": 3347,
+     "resume_prompt_est_tokens": 836,
+     "gate_only_bytes": 904
+    },
+    {
+     "work_items": 100,
+     "handoff_md_bytes": 13006,
+     "handoff_est_tokens": 3251,
+     "resume_prompt_bytes": 19459,
+     "resume_prompt_est_tokens": 4864,
+     "gate_only_bytes": 6065
+    },
+    {
+     "work_items": 500,
+     "handoff_md_bytes": 62866,
+     "handoff_est_tokens": 15716,
+     "resume_prompt_bytes": 92461,
+     "resume_prompt_est_tokens": 23115,
+     "gate_only_bytes": 29207
+    }
+   ]
+  },
+  "meta": {
+   "date": "2026-10-12",
+   "cli_version_string": "0.3.0",
+   "pyproject_version": "0.3.1",
+   "commit": "0e159dc",
+   "python": "3.11.13",
+   "git": "git version 2.51.0",
+   "os": "macOS 26.6.2 arm64",
+   "cpu": "Apple M3",
+   "cores": 8
+  }
+ },
+ "generated": "2026-10-12"
+}
