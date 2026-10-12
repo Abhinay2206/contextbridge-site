@@ -4,8 +4,8 @@ export function HBars({ rows, max, unit = "", color = "var(--signal)", w = 150 }
   const m = max ?? Math.max(...rows.map((r) => r.value), 1);
   return (
     <div className="hbars" style={{ ["--lw" as any]: `${w}px` }}>
-      {rows.map((r) => (
-        <div className="hbar" key={r.label}>
+      {rows.map((r, i) => (
+        <div className="hbar" key={`${i}-${r.label}`}>
           <span className="hl">{r.label}</span>
           <span className="ht"><i data-bar={(r.value / m) * 100} style={{ background: r.color || color, width: `${(r.value / m) * 100}%` }} /></span>
           <span className="hv">{r.note ?? `${r.value}${unit}`}</span>
