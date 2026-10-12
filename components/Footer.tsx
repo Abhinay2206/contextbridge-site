@@ -23,7 +23,7 @@ export default function Footer() {
           <span>Preserve the state of the work, not just the story of the conversation.</span>
           <nav><a href={REPO} target="_blank" rel="noreferrer">GitHub</a><a href="https://pypi.org/project/contextbridge-cli/" target="_blank" rel="noreferrer">PyPI</a><a href={`${REPO}/blob/main/CHANGELOG.md`} target="_blank" rel="noreferrer">Changelog</a><a href={`${REPO}/blob/main/SECURITY.md`} target="_blank" rel="noreferrer">Security</a></nav>
         </div>
-        <div className="foot-word" aria-hidden>Context<span className="it">Bridge</span></div>
+        <div className="foot-word" aria-hidden>Context<span className="it">Bridge</span><span className="foot-skill">skill</span></div>
         <div className="foot-bot"><span>Built by Abhinay · Developed by <a href={ORVANTIA} target="_blank" rel="noreferrer" style={{ textDecoration: "underline" }}>Orvantia</a></span><span>MIT License · v{TOOL_VERSION}</span></div>
       </div>
     </footer>

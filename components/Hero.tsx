@@ -66,7 +66,7 @@ export default function Hero() {
       <div className="scroll-cue">Scroll</div>
       <div className="hero-bottom">
         <p className="hero-sub">
-          A resume <b>safety gate</b> for AI coding sessions. It checkpoints the real state of your repo, records the tests you actually ran, and tells the next session whether it is safe to touch code.
+          The <b>ContextBridge skill</b> is a resume safety gate for AI coding sessions. It checkpoints the real state of your repo, records the tests you actually ran, and tells the next session whether it is safe to touch code.
         </p>
         <div className="cta-row">
           <button className="pill solid" onClick={copy} data-magnet aria-label="Copy install command">

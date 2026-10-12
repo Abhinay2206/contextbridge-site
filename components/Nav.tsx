@@ -11,7 +11,7 @@ export function Mark() {
 export default function Nav({ base = "" }: { base?: string }) {
   return (
     <header className="nav">
-      <a className="logo" href={base ? "/" : "#top"} aria-label="ContextBridge home"><Mark />ContextBridge</a>
+      <a className="logo" href={base ? "/" : "#top"} aria-label="ContextBridge home"><Mark />ContextBridge<span className="logo-skill">skill</span></a>
       <nav className="nav-links">
         <a href={`${base}#watch`}>Watch</a><a href={`${base}#gate`}>The gate</a><a href={`${base}#how`}>How it works</a><a href="/benchmark">Benchmarks</a><a href={`${base}#install`}>Install</a>
         <a className="nav-gh" href={REPO} target="_blank" rel="noreferrer" data-magnet>GitHub ↗</a>

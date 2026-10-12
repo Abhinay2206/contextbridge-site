@@ -1,14 +1,15 @@
 const isProd = process.env.NODE_ENV === "production";
+const GA = Boolean(process.env.NEXT_PUBLIC_GA_ID);  // analytics is opt-in: the policy is only widened when an ID is set
 
 // Everything is served from our own origin; inline script/style are required by Next.js hydration and GSAP.
 const csp = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline'",
+  `script-src 'self' 'unsafe-inline'${GA ? " https://www.googletagmanager.com" : ""}`,
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: blob:",
+  `img-src 'self' data: blob:${GA ? " https://*.google-analytics.com https://*.googletagmanager.com" : ""}`,
   "media-src 'self'",
   "font-src 'self' data:",
-  "connect-src 'self'",
+  `connect-src 'self'${GA ? " https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com" : ""}`,
   "object-src 'none'",
   "base-uri 'self'",
   "form-action 'self'",

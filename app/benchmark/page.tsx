@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: "Benchmark report",
   description: "Measured, not claimed: speed, gate accuracy, randomized oracle testing, token cost, secret scanning and reliability for ContextBridge, with the raw data and a downloadable report.",
   alternates: { canonical: "/benchmark" },
-  openGraph: { type: "article", url: "/benchmark", title: "ContextBridge benchmark report: measured, not claimed", description: "Labeled scenarios, randomized oracle testing, token cost and secret-scanner results for ContextBridge." },
+  openGraph: { type: "article", url: "/benchmark", title: "ContextBridge skill benchmark report: measured, not claimed", description: "Labeled scenarios, randomized oracle testing, token cost and secret-scanner results for ContextBridge." },
 };
 
 const fz = v2.fuzz, tk = v2.tokens, sc = v2.scanner, st = v2.stability, cc = v2.concurrency, pk = v2.packaging;
