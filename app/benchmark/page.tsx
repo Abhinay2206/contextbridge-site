@@ -4,11 +4,14 @@ import Motion from "../../components/Motion";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import { HBars, Stack, Lines, Matrix } from "../../components/Charts";
+import { SITE_URL, ld } from "../../lib/site";
 import { B, v1, v2, ms, num, pct, allScenarios, scenarioPass, speedTop, families } from "../../lib/bench";
 
 export const metadata: Metadata = {
-  title: "Benchmarks — ContextBridge",
-  description: "Measured, not claimed: speed, gate accuracy, randomized oracle testing, token cost, secret scanning and reliability for ContextBridge.",
+  title: "Benchmark report",
+  description: "Measured, not claimed: speed, gate accuracy, randomized oracle testing, token cost, secret scanning and reliability for ContextBridge, with the raw data and a downloadable report.",
+  alternates: { canonical: "/benchmark" },
+  openGraph: { type: "article", url: "/benchmark", title: "ContextBridge benchmark report: measured, not claimed", description: "Labeled scenarios, randomized oracle testing, token cost and secret-scanner results for ContextBridge." },
 };
 
 const fz = v2.fuzz, tk = v2.tokens, sc = v2.scanner, st = v2.stability, cc = v2.concurrency, pk = v2.packaging;
@@ -19,12 +22,11 @@ const gaps = Object.entries(sc.gaps) as [string, any][];
 const worstCC = cc[cc.length - 1];
 const repo = tk.baseline;
 
-const FINDINGS: { id: string; sev: "hi" | "md" | "lo"; title: string; evidence: string; fix: string }[] = B.findings;
-
 export default function Benchmark() {
   const speedRows = v1.speed.rows.filter((r: any) => r.dirty === 500 || r.dirty === 0);
   return (
-    <main>
+    <main id="main">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ld({ "@context": "https://schema.org", "@type": "TechArticle", headline: "ContextBridge benchmark report", url: `${SITE_URL}/benchmark`, about: "ContextBridge", author: { "@type": "Person", name: "Abhinay" }, dateModified: B.generated, inLanguage: "en" }) }} />
       <Motion /><Nav base="/" />
 
       <section className="bm-hero">
@@ -112,7 +114,7 @@ export default function Benchmark() {
             <tr><td><span className="mono">resume --check</span></td><td className="mono">{gate.median}</td><td className="mono">{gate.p90}</td><td className="mono">{num(gate.max)}</td><td className="mono">{gate.min}</td></tr>
             <tr><td><span className="mono">resume</span> (gate + handoff)</td><td className="mono">{full.median}</td><td className="mono">{full.p90}</td><td className="mono">{num(full.max)}</td><td className="mono">{full.min}</td></tr>
           </tbody></table></div>
-          <p className="bm-note">The maximum is the 1,000-new-files scenario (finding N3): the gate lists every changed file.</p>
+          <p className="bm-note">The maximum is the scenario with 1,000 new files. The gate collapses repeated findings into a count, so even that output stays small.</p>
         </div>
       </section>
 
@@ -143,20 +145,20 @@ export default function Benchmark() {
       <section className="bm-sec">
         <span className="eyebrow">05 · Secret scanner</span>
         <h2 data-lines><span className="mask"><span>What it catches,</span></span><span className="mask"><span>and what it <span className="it">misses.</span></span></span></h2>
-        <p className="sub" data-fade>{num(covered[0][1].n)} synthetic fake secrets per format ({covered.length} formats with dedicated patterns), then {gaps.length} formats with none, then false-positive rates on real code.</p>
+        <p className="sub" data-fade>{num(covered[0][1].n)} synthetic fake secrets per format ({covered.length} formats with dedicated patterns), then {gaps.length} formats with none, then how often it fires on real code.</p>
         <div className="bm-cols">
           <div className="panel" data-fade>
             <h3>Detected and redacted: {covered.length} formats</h3>
             <div className="chips">{covered.map(([k, v]) => (<span key={k} className={`chipx2 ${v.recall === 1 ? "ok" : "no"}`}>{k.replace(/_/g, " ")} {pct(v.recall, 0)}</span>))}</div>
             <p className="bm-note">Redaction removed the secret and left nothing re-detectable in {pct(Math.min(...covered.map(([, v]) => v.redaction_clean ?? 1)), 0)} of detections.</p>
-            <h3 style={{ marginTop: 30 }}>Not detected: {gaps.length} formats</h3>
+            <h3 style={{ marginTop: 30 }}>Deliberately not detected: {gaps.length} formats</h3>
             <div className="chips">{gaps.map(([k, v]) => (<span key={k} className="chipx2 no">{k.replace(/_/g, " ")} {pct(v.recall, 0)}</span>))}</div>
-            <p className="bm-note">Random hex/base64 strings and short passwords are deliberately not flagged; doing so would flag hashes and IDs. The scanner is best-effort, and the README says so.</p>
+            <p className="bm-note">Random hex and base64 strings, UUID-style keys and short passwords are not flagged; doing so would flag hashes and IDs. The scanner is best-effort, and the README says so.</p>
           </div>
           <div className="panel" data-fade="0.1">
-            <h3>False positives on real code</h3>
+            <h3>Hits on real code</h3>
             <HBars w={180} color="var(--amber)" rows={Object.entries(sc.corpora).map(([k, v]: [string, any]) => ({ label: k.replace(/_/g, " "), value: v.per_million_lines, note: `${v.flagged} / ${num(v.lines)} lines` }))} />
-            <p className="bm-note">Lines flagged per million lines scanned. Samples are ordinary code such as <span className="mono">{sc.corpora.python_stdlib_all.samples[0]?.[3]}</span>. Lockfiles produced {sc.corpora.package_lock_files.flagged} false positives.</p>
+            <p className="bm-note">Lines flagged per million lines scanned. What remains is mostly test fixtures with literal passwords, such as <span className="mono">{sc.corpora.python_stdlib_all.samples[0]?.[3]}</span>, and very long minified lines. Lockfiles produced {sc.corpora.package_lock_files.flagged} hits.</p>
           </div>
         </div>
       </section>
@@ -164,7 +166,7 @@ export default function Benchmark() {
       {/* ---------------- reliability ---------------- */}
       <section className="bm-sec dark">
         <span className="eyebrow">06 · Reliability</span>
-        <h2 data-lines><span className="mask"><span>Stable, portable,</span></span><span className="mask"><span>and one <span className="it">honest gap.</span></span></span></h2>
+        <h2 data-lines><span className="mask"><span>Stable, portable,</span></span><span className="mask"><span>and <span className="it">lossless.</span></span></span></h2>
         <div className="bm-cols">
           <div className="panel" data-fade>
             <h3>Test-suite stability</h3>
@@ -181,28 +183,16 @@ export default function Benchmark() {
             </dl>
           </div>
           <div className="panel" data-fade="0.1">
-            <h3>Concurrent writers (no locking today)</h3>
-            <HBars w={120} rows={cc.flatMap((c: any) => [{ label: `${c.workers} writers`, value: c.expected, note: `${c.expected} executed`, color: "var(--mute-d)" }, { label: "", value: c.recorded, note: `${c.recorded} recorded`, color: "var(--red)" }])} max={Math.max(...cc.map((c: any) => c.expected))} />
-            <p className="bm-note">Parallel <span className="mono">run</span> commands each read the state, add one entry and write it back, so later writes overwrite earlier ones. The file never corrupts (writes are atomic), but entries are lost. This matters if several agents share one checkout.</p>
+            <h3>Concurrent writers</h3>
+            <HBars w={120} rows={cc.flatMap((c: any) => [{ label: `${c.workers} writers`, value: c.expected, note: `${c.expected} executed`, color: "var(--mute-d)" }, { label: "", value: c.recorded, note: `${c.recorded} recorded`, color: "var(--green)" }])} max={Math.max(...cc.map((c: any) => c.expected))} />
+            <p className="bm-note">Several processes run <span className="mono">run</span> in the same repository at once. Writers take an exclusive lock around reading and writing the notes, so every executed run is recorded with a unique id and the files stay valid JSON.</p>
           </div>
         </div>
       </section>
 
-      {/* ---------------- findings ---------------- */}
-      <section className="bm-sec">
-        <span className="eyebrow">07 · Findings</span>
-        <h2 data-lines><span className="mask"><span>What testing</span></span><span className="mask"><span>actually <span className="it">found.</span></span></span></h2>
-        <div className="panel tbl-wrap" data-fade style={{ marginTop: 48 }}>
-          <table className="tbl"><thead><tr><th>#</th><th>Finding</th><th>Evidence</th><th>Suggested fix</th><th>Severity</th></tr></thead><tbody>
-            {FINDINGS.map((f) => (<tr key={f.id}><td className="mono">{f.id}</td><td><b>{f.title}</b></td><td>{f.evidence}</td><td>{f.fix}</td><td><span className={`sev ${f.sev}`}>{f.sev === "hi" ? "high" : f.sev === "md" ? "medium" : "low"}</span></td></tr>))}
-          </tbody></table>
-        </div>
-        <p className="bm-note" data-fade>Earlier rounds (version, nested repositories, scanner formats, handoff size, the status crash) were found by the first benchmark and are already fixed in 0.3.2; this report re-tests them.</p>
-      </section>
-
       {/* ---------------- method ---------------- */}
       <section className="bm-sec dark">
-        <span className="eyebrow">08 · Method and limits</span>
+        <span className="eyebrow">07 · Method and limits</span>
         <h2 data-lines><span className="mask"><span>Read this before</span></span><span className="mask"><span>you <span className="it">trust it.</span></span></span></h2>
         <div className="bm-cols">
           <div className="panel" data-fade><h3>What this does not prove</h3>

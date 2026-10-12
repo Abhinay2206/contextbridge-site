@@ -1,13 +1,27 @@
 # ContextBridge site
 
-Next.js 15 (App Router) + GSAP ScrollTrigger + Lenis. Static output, no backend.
+Next.js 15 (App Router), GSAP ScrollTrigger and Lenis. Static output, no backend, no cookies, no analytics, no forms.
 
 ```bash
 npm install
-npm run dev        # http://localhost:3000
-npm run build && npm start
+npm run dev                 # http://localhost:3000
+npm run build && npm start  # production (applies the Content-Security-Policy)
 ```
 
-- Content constants: `components/Nav.tsx` (repo URL), `components/Footer.tsx` (Orvantia URL), `components/Install.tsx` (install commands).
-- The promo video is `public/promo-16x9.mp4` (web-sized copy, 12.7 MB) with `public/promo-poster.jpg`.
-- The plugin install line uses the `abhinay-contextbridge` marketplace name, which exists once the 0.3.2 changes are merged to `main`.
+## Before deploying
+
+1. Set the public URL (canonical links, Open Graph, sitemap, robots):
+   `NEXT_PUBLIC_SITE_URL=https://your-domain.example` (see `.env.example`).
+2. Serve over HTTPS (the site sends HSTS).
+3. Keep `TOOL_VERSION` in `lib/site.ts` (shown in the hero, footer and structured data) equal to the tool's version, and the site's `package.json` version alongside it.
+4. Regenerate benchmark data after a new run: `python3 merge.py` in `ContextBridge-Benchmark/` copies `benchmark.json` into `data/` and `public/`.
+
+## What is built in
+
+- **SEO:** per-page titles and descriptions, canonical URLs, Open Graph and Twitter cards with generated images, `sitemap.xml`, `robots.txt`, web manifest, JSON-LD (`SoftwareApplication`, `TechArticle`), semantic landmarks, one `h1` per page.
+- **Security headers** (`next.config.mjs`): Content-Security-Policy (same-origin only, no `eval`), HSTS, `X-Frame-Options: DENY`, `X-Content-Type-Options`, Referrer-Policy, Permissions-Policy, COOP and CORP, `poweredByHeader` off. `/.well-known/security.txt` points to the repository's private vulnerability reporting.
+- **Accessibility:** skip link, visible focus rings, `prefers-reduced-motion` support, labelled controls, text contrast of at least 4.5:1.
+- **Performance:** self-hosted variable fonts, lazy media (`preload="metadata"`), the phone gets the 9:16 video, long-lived cache headers for media.
+- **Resilience:** custom 404, error and global-error pages.
+
+The promo videos carry music only, so there is no caption track.

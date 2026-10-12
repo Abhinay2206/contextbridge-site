@@ -2,97 +2,97 @@
  "v1": {
   "meta": {
    "date": "2026-10-12",
-   "cli_version_string": "0.3.2",
-   "pyproject_version": "0.3.2",
+   "cli_version_string": "0.3.3",
+   "pyproject_version": "0.3.3",
    "commit": "30c2b62",
-   "python": "3.14.6",
+   "python": "3.11.13",
    "git": "git version 2.51.0",
    "os": "macOS 26.6.2 arm64",
    "cpu": "Apple M3",
    "cores": 8
   },
   "speed": {
-   "interpreter_startup_s": 0.06194295801105909,
+   "interpreter_startup_s": 0.04044112502015196,
    "rows": [
     {
      "files": 200,
      "dirty": 0,
-     "git_status_s": 0.015158042020630091,
-     "save_s": 0.12114912501419894,
-     "resume_check_s": 0.08769691700581461,
-     "drift_s": 0.0878281660261564,
-     "run_overhead_s": 0.09210404197801836,
+     "git_status_s": 0.014709791023051366,
+     "save_s": 0.1382204580004327,
+     "resume_check_s": 0.07671895800740458,
+     "drift_s": 0.07624162500724196,
+     "run_overhead_s": 0.09371541699510999,
      "state_json_bytes": 2339
     },
     {
      "files": 200,
      "dirty": 50,
-     "git_status_s": 0.014336833002744243,
-     "save_s": 0.1254989159933757,
-     "resume_check_s": 0.08925770898349583,
-     "drift_s": 0.09104191602091305,
-     "run_overhead_s": 0.0976667909999378,
+     "git_status_s": 0.0113740419910755,
+     "save_s": 0.14814979099901393,
+     "resume_check_s": 0.0791536670003552,
+     "drift_s": 0.07902687499881722,
+     "run_overhead_s": 0.10288037502323277,
      "state_json_bytes": 10623
     },
     {
      "files": 2000,
      "dirty": 0,
-     "git_status_s": 0.014322041999548674,
-     "save_s": 0.15104041597805917,
-     "resume_check_s": 0.10209187498549,
-     "drift_s": 0.10904058301821351,
-     "run_overhead_s": 0.10948941699462011,
-     "state_json_bytes": 2340
+     "git_status_s": 0.013222415989730507,
+     "save_s": 0.1431707089941483,
+     "resume_check_s": 0.07765199997811578,
+     "drift_s": 0.07780383300269023,
+     "run_overhead_s": 0.09804995899321511,
+     "state_json_bytes": 2339
     },
     {
      "files": 2000,
      "dirty": 50,
-     "git_status_s": 0.0186573329847306,
-     "save_s": 0.19062979199225083,
-     "resume_check_s": 0.1267199579742737,
-     "drift_s": 0.14372029199148528,
-     "run_overhead_s": 0.15335125001729466,
-     "state_json_bytes": 10626
+     "git_status_s": 0.013434499996947125,
+     "save_s": 0.15190216701012105,
+     "resume_check_s": 0.08315612500882708,
+     "drift_s": 0.08046787499915808,
+     "run_overhead_s": 0.1030871249968186,
+     "state_json_bytes": 10623
     },
     {
      "files": 2000,
      "dirty": 500,
-     "git_status_s": 0.01933579202159308,
-     "save_s": 0.20378141599940136,
-     "resume_check_s": 0.13096899999072775,
-     "drift_s": 0.1311912079981994,
-     "run_overhead_s": 0.1581205420079641,
+     "git_status_s": 0.013922791986260563,
+     "save_s": 0.18717474999721162,
+     "resume_check_s": 0.09065379199455492,
+     "drift_s": 0.09162387499236502,
+     "run_overhead_s": 0.1442446659784764,
      "state_json_bytes": 85633
     },
     {
      "files": 10000,
      "dirty": 0,
-     "git_status_s": 0.025667750014690682,
-     "save_s": 0.16274462500587106,
-     "resume_check_s": 0.11442224998609163,
-     "drift_s": 0.11501866698381491,
-     "run_overhead_s": 0.12399587497930042,
+     "git_status_s": 0.022065416007535532,
+     "save_s": 0.17628683400107548,
+     "resume_check_s": 0.09531508400687017,
+     "drift_s": 0.09046079198014922,
+     "run_overhead_s": 0.11311704199761152,
      "state_json_bytes": 2339
     },
     {
      "files": 10000,
      "dirty": 50,
-     "git_status_s": 0.02575425000395626,
-     "save_s": 0.18029495800146833,
-     "resume_check_s": 0.12389079100103118,
-     "drift_s": 0.12048395801684819,
-     "run_overhead_s": 0.1278045830258634,
+     "git_status_s": 0.022221040999284014,
+     "save_s": 0.1791803750093095,
+     "resume_check_s": 0.09145462501328439,
+     "drift_s": 0.0951288329961244,
+     "run_overhead_s": 0.11970949999522418,
      "state_json_bytes": 10623
     },
     {
      "files": 10000,
      "dirty": 500,
-     "git_status_s": 0.027430417016148567,
-     "save_s": 0.21457191699300893,
-     "resume_check_s": 0.13195229199482128,
-     "drift_s": 0.14155733300140128,
-     "run_overhead_s": 0.15836537498398684,
-     "state_json_bytes": 85633
+     "git_status_s": 0.02349033299833536,
+     "save_s": 0.26469295800779946,
+     "resume_check_s": 0.14256849998491816,
+     "drift_s": 0.12761104200035334,
+     "run_overhead_s": 0.19237816601525992,
+     "state_json_bytes": 85634
     }
    ]
   },
@@ -215,7 +215,7 @@
     "finding_expected": "commit(s) since",
     "finding_ok": true,
     "exit_code": 1,
-    "top_finding": "1 commit(s) since checkpoint (ca855b3c -> 4fb7fc30)"
+    "top_finding": "1 commit(s) since checkpoint (0c24e3b9 -> bf7557f3)"
    },
    {
     "id": "five_new_commits",
@@ -227,7 +227,7 @@
     "finding_expected": "5 commit",
     "finding_ok": true,
     "exit_code": 1,
-    "top_finding": "5 commit(s) since checkpoint (ca855b3c -> c7575413)"
+    "top_finding": "5 commit(s) since checkpoint (70775d1d -> 2a462d05)"
    },
    {
     "id": "commit_touches_planned",
@@ -239,7 +239,7 @@
     "finding_expected": "feature B",
     "finding_ok": true,
     "exit_code": 1,
-    "top_finding": "1 commit(s) since checkpoint (3acde5c5 -> dbf4cac3)"
+    "top_finding": "1 commit(s) since checkpoint (d6561ae6 -> df11e4f6)"
    },
    {
     "id": "assumption_text_removed",
@@ -287,7 +287,7 @@
     "finding_expected": "not an ancestor",
     "finding_ok": true,
     "exit_code": 2,
-    "top_finding": "checkpoint commit 7ba199a5 is not an ancestor of HEAD (rebase, force-push or different branch); file comparison is unreliable"
+    "top_finding": "checkpoint commit e6b1ecc7 is not an ancestor of HEAD (rebase, force-push or different branch); file comparison is unreliable"
    },
    {
     "id": "reset_hard_back",
@@ -299,7 +299,7 @@
     "finding_expected": "not an ancestor",
     "finding_ok": true,
     "exit_code": 2,
-    "top_finding": "checkpoint commit 6a3da843 is not an ancestor of HEAD (rebase, force-push or different branch); file comparison is unreliable"
+    "top_finding": "checkpoint commit c34aeacd is not an ancestor of HEAD (rebase, force-push or different branch); file comparison is unreliable"
    },
    {
     "id": "same_commit_new_branch_name",
@@ -383,7 +383,7 @@
     "finding_expected": "commit(s) since",
     "finding_ok": true,
     "exit_code": 1,
-    "top_finding": "1 commit(s) since checkpoint (69e00cfe -> fbcb3ccb)"
+    "top_finding": "1 commit(s) since checkpoint (de392737 -> 6236a5b3)"
    },
    {
     "id": "wip_edited_again",
@@ -503,7 +503,7 @@
     "finding_expected": "FAILED",
     "finding_ok": true,
     "exit_code": 1,
-    "top_finding": "last test run E2 `/opt/homebrew/opt/python@3.14/bin/python3.14 -c raise SystemExit(1) -y` FAILED (exit 1)"
+    "top_finding": "last test run E2 `/opt/homebrew/opt/python@3.11/bin/python3.11 -c raise SystemExit(1) -y` FAILED (exit 1)"
    },
    {
     "id": "unfinished_run",
@@ -515,7 +515,7 @@
     "finding_expected": "never finished",
     "finding_ok": true,
     "exit_code": 1,
-    "top_finding": "E1 `/opt/homebrew/opt/python@3.14/bin/python3.14 -c pass -y` never finished (still running or interrupted)"
+    "top_finding": "E1 `/opt/homebrew/opt/python@3.11/bin/python3.11 -c pass -y` never finished (still running or interrupted)"
    },
    {
     "id": "claim_without_any_run",
@@ -716,41 +716,40 @@
    "redaction": {},
    "corpora": {
     "python_stdlib": {
-     "files": 455,
-     "lines": 230346,
-     "mb": 8.541566,
-     "seconds": 1.1833541669766419,
-     "mb_per_s": 7.218097707656613,
-     "flagged": 3,
-     "flagged_samples": [
-      [
-       "opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/getpass.py",
-       202,
-       "generic-secret",
-       "passwd = passwd[:-1]"
-      ],
-      [
-       "opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/plistlib.py",
-       551,
-       "generic-secret",
-       "token = self._fp.read(1)[0]"
-      ],
-      [
-       "opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/_pyrepl/_module_completer.py",
-       253,
-       "generic-secret",
-       "self.tokens = TokenQueue(tokens[::-1])"
-      ]
-     ]
+     "files": 469,
+     "lines": 236978,
+     "mb": 8.767258,
+     "seconds": 1.9887446670036297,
+     "mb_per_s": 4.408438220080466,
+     "flagged": 0,
+     "flagged_samples": []
     },
     "contextbridge_repo": {
      "files": 30,
-     "lines": 2176,
-     "mb": 0.102093,
-     "seconds": 0.021280333981849253,
-     "mb_per_s": 4.797528088002694,
-     "flagged": 1,
+     "lines": 2352,
+     "mb": 0.11194,
+     "seconds": 0.031891708000330254,
+     "mb_per_s": 3.510003289847029,
+     "flagged": 4,
      "flagged_samples": [
+      [
+       "tests/test_scanner.py",
+       56,
+       "generic-secret",
+       "for t in ('password = \"my(pass)word1\"', \"api_key: 'ab12cd34ef56'\", 'AUTH_TOKEN=abc123XYZ789def456'):"
+      ],
+      [
+       "tests/test_scanner.py",
+       56,
+       "generic-secret",
+       "for t in ('password = \"my(pass)word1\"', \"api_key: 'ab12cd34ef56'\", 'AUTH_TOKEN=abc123XYZ789def456'):"
+      ],
+      [
+       "tests/test_scanner.py",
+       56,
+       "generic-secret",
+       "for t in ('password = \"my(pass)word1\"', \"api_key: 'ab12cd34ef56'\", 'AUTH_TOKEN=abc123XYZ789def456'):"
+      ],
       [
        "tests/test_e2e.py",
        105,
@@ -765,27 +764,27 @@
    "evidence_growth": [
     {
      "runs": 25,
-     "state_json_bytes": 8430,
+     "state_json_bytes": 8432,
      "handoff_md_bytes": 1689,
-     "save_s": 0.12803312498726882
+     "save_s": 0.1580722920189146
     },
     {
      "runs": 100,
      "state_json_bytes": 32508,
      "handoff_md_bytes": 1690,
-     "save_s": 0.13042991698603146
+     "save_s": 0.15230200000223704
     },
     {
      "runs": 250,
-     "state_json_bytes": 80818,
+     "state_json_bytes": 80812,
      "handoff_md_bytes": 1699,
-     "save_s": 0.2204554580093827
+     "save_s": 0.2276262920058798
     },
     {
      "runs": 500,
-     "state_json_bytes": 161442,
+     "state_json_bytes": 161317,
      "handoff_md_bytes": 1699,
-     "save_s": 0.34271595798782073
+     "save_s": 0.17631487498874776
     }
    ],
    "handoff_size": [
@@ -820,8 +819,8 @@
   "meta": {
    "date": "2026-10-12",
    "commit": "30c2b62",
-   "dirty_tree": false,
-   "version": "0.3.2",
+   "dirty_tree": true,
+   "version": "0.3.3",
    "python": "3.14.6",
    "git": "git version 2.51.0",
    "os": "Darwin 25.6.0 arm64",
@@ -840,7 +839,7 @@
     "finding_expected": null,
     "finding_ok": true,
     "top_finding": null,
-    "seconds": 0.6252720420015976
+    "seconds": 0.7525693750067148
    },
    {
     "id": "git_gc",
@@ -852,7 +851,7 @@
     "finding_expected": null,
     "finding_ok": true,
     "top_finding": null,
-    "seconds": 0.7419352090219036
+    "seconds": 0.7636471670120955
    },
    {
     "id": "add_lightweight_tag",
@@ -864,7 +863,7 @@
     "finding_expected": null,
     "finding_ok": true,
     "top_finding": null,
-    "seconds": 0.5803305419976823
+    "seconds": 0.7144850839977153
    },
    {
     "id": "checkout_same_branch",
@@ -876,7 +875,7 @@
     "finding_expected": null,
     "finding_ok": true,
     "top_finding": null,
-    "seconds": 0.5760480419849046
+    "seconds": 0.7045394579763524
    },
    {
     "id": "worktree_added",
@@ -888,7 +887,7 @@
     "finding_expected": null,
     "finding_ok": true,
     "top_finding": null,
-    "seconds": 0.5854972910019569
+    "seconds": 0.7135606670053676
    },
    {
     "id": "ignored_200_files",
@@ -900,7 +899,7 @@
     "finding_expected": null,
     "finding_ok": true,
     "top_finding": null,
-    "seconds": 0.5901880000019446
+    "seconds": 0.7013134169974364
    },
    {
     "id": "env_local_file",
@@ -912,7 +911,7 @@
     "finding_expected": null,
     "finding_ok": true,
     "top_finding": null,
-    "seconds": 0.5733161670214031
+    "seconds": 0.6773797909845598
    },
    {
     "id": "pem_file",
@@ -924,7 +923,7 @@
     "finding_expected": null,
     "finding_ok": true,
     "top_finding": null,
-    "seconds": 0.5915693339775316
+    "seconds": 0.6839705420134123
    },
    {
     "id": "credentials_json",
@@ -936,7 +935,7 @@
     "finding_expected": null,
     "finding_ok": true,
     "top_finding": null,
-    "seconds": 0.6671171250054613
+    "seconds": 0.68483974999981
    },
    {
     "id": "custom_ignore_pattern",
@@ -948,7 +947,7 @@
     "finding_expected": null,
     "finding_ok": true,
     "top_finding": null,
-    "seconds": 0.5680738330120221
+    "seconds": 0.6836472910072189
    },
    {
     "id": "edit_then_restore",
@@ -960,7 +959,7 @@
     "finding_expected": null,
     "finding_ok": true,
     "top_finding": null,
-    "seconds": 0.5843720830162056
+    "seconds": 0.7000093329988886
    },
    {
     "id": "add_then_delete_untracked",
@@ -972,7 +971,7 @@
     "finding_expected": null,
     "finding_ok": true,
     "top_finding": null,
-    "seconds": 0.5653456250147428
+    "seconds": 0.6872967499948572
    },
    {
     "id": "commit_then_hard_reset_back",
@@ -984,7 +983,7 @@
     "finding_expected": null,
     "finding_ok": true,
     "top_finding": null,
-    "seconds": 0.6044803750119172
+    "seconds": 0.7125945409934502
    },
    {
     "id": "edit_10_files",
@@ -996,7 +995,7 @@
     "finding_expected": "new uncommitted change",
     "finding_ok": true,
     "top_finding": "src/e0.py: new uncommitted change since checkpoint",
-    "seconds": 0.6670084999932442
+    "seconds": 0.6891316249966621
    },
    {
     "id": "edit_50_untracked",
@@ -1008,7 +1007,7 @@
     "finding_expected": "new uncommitted change",
     "finding_ok": true,
     "top_finding": "gen/f0.txt: new uncommitted change since checkpoint",
-    "seconds": 0.9608035829733126
+    "seconds": 0.6792541249888018
    },
    {
     "id": "untracked_1000_files",
@@ -1020,7 +1019,7 @@
     "finding_expected": "new uncommitted change",
     "finding_ok": true,
     "top_finding": "gen/f0.txt: new uncommitted change since checkpoint",
-    "seconds": 5.693151292012772
+    "seconds": 0.7956110409868415
    },
    {
     "id": "large_file_20mb",
@@ -1032,7 +1031,7 @@
     "finding_expected": "big.bin",
     "finding_ok": true,
     "top_finding": "big.bin: new uncommitted change since checkpoint",
-    "seconds": 3.225435792002827
+    "seconds": 0.7609030829917174
    },
    {
     "id": "crlf_conversion",
@@ -1044,7 +1043,7 @@
     "finding_expected": null,
     "finding_ok": true,
     "top_finding": "src/a.py: new uncommitted change since checkpoint",
-    "seconds": 1.1170756249921396
+    "seconds": 0.6988617499882821
    },
    {
     "id": "file_becomes_directory",
@@ -1056,7 +1055,7 @@
     "finding_expected": null,
     "finding_ok": true,
     "top_finding": "src/b.py: new uncommitted change since checkpoint",
-    "seconds": 1.0851012500061188
+    "seconds": 0.6979501250025351
    },
    {
     "id": "case_only_rename",
@@ -1068,7 +1067,7 @@
     "finding_expected": null,
     "finding_ok": true,
     "top_finding": "Readme.md: new uncommitted change since checkpoint",
-    "seconds": 1.1239918750070501
+    "seconds": 0.6970564170042053
    },
    {
     "id": "newline_in_filename",
@@ -1080,7 +1079,7 @@
     "finding_expected": null,
     "finding_ok": true,
     "top_finding": "we\nird.txt: new uncommitted change since checkpoint",
-    "seconds": 1.0920332910027355
+    "seconds": 0.6965335420100018
    },
    {
     "id": "empty_commit",
@@ -1091,8 +1090,8 @@
     "verdict_ok": true,
     "finding_expected": "commit(s) since",
     "finding_ok": true,
-    "top_finding": "1 commit(s) since checkpoint (22d5dd2a -> cd81ead1)",
-    "seconds": 1.115439957997296
+    "top_finding": "1 commit(s) since checkpoint (f096a615 -> 685c3db4)",
+    "seconds": 0.7342427909898106
    },
    {
     "id": "merge_commit",
@@ -1103,8 +1102,8 @@
     "verdict_ok": true,
     "finding_expected": "commit(s) since",
     "finding_ok": true,
-    "top_finding": "2 commit(s) since checkpoint (dcc89498 -> 5a4987ae)",
-    "seconds": 1.1752065419859719
+    "top_finding": "2 commit(s) since checkpoint (98a47036 -> fb108624)",
+    "seconds": 0.7957475830044132
    },
    {
     "id": "fast_forward",
@@ -1115,8 +1114,8 @@
     "verdict_ok": true,
     "finding_expected": "commit(s) since",
     "finding_ok": true,
-    "top_finding": "1 commit(s) since checkpoint (b270b64a -> de49d49b)",
-    "seconds": 1.2033450829912908
+    "top_finding": "1 commit(s) since checkpoint (b0df15e5 -> b4fee2b8)",
+    "seconds": 0.7938815410016105
    },
    {
     "id": "cherry_pick",
@@ -1127,8 +1126,8 @@
     "verdict_ok": true,
     "finding_expected": "commit(s) since",
     "finding_ok": true,
-    "top_finding": "1 commit(s) since checkpoint (de219213 -> b728c3b9)",
-    "seconds": 1.3930474579974543
+    "top_finding": "1 commit(s) since checkpoint (47577be4 -> a18a9bf9)",
+    "seconds": 0.7804922909999732
    },
    {
     "id": "commit_then_revert",
@@ -1139,8 +1138,8 @@
     "verdict_ok": true,
     "finding_expected": "commit(s) since",
     "finding_ok": true,
-    "top_finding": "2 commit(s) since checkpoint (4dc1c6b9 -> a6b28d57)",
-    "seconds": 1.5254210839921143
+    "top_finding": "2 commit(s) since checkpoint (47577be4 -> 1d33c58c)",
+    "seconds": 0.7434027080016676
    },
    {
     "id": "stash_pop_roundtrip",
@@ -1152,7 +1151,7 @@
     "finding_expected": null,
     "finding_ok": true,
     "top_finding": "src/a.py: new uncommitted change since checkpoint",
-    "seconds": 1.201107500004582
+    "seconds": 0.7188990419963375
    },
    {
     "id": "soft_reset_keeps_changes",
@@ -1164,7 +1163,7 @@
     "finding_expected": null,
     "finding_ok": true,
     "top_finding": "README.md: new uncommitted change since checkpoint",
-    "seconds": 1.4480057079927064
+    "seconds": 0.7153088329941966
    },
    {
     "id": "main_moved_unrelated",
@@ -1175,8 +1174,8 @@
     "verdict_ok": true,
     "finding_expected": "not an ancestor",
     "finding_ok": true,
-    "top_finding": "checkpoint commit f6c2f14b is not an ancestor of HEAD (rebase, force-push or different branch); file comparison is unreliable",
-    "seconds": 1.3524117500055581
+    "top_finding": "checkpoint commit 9d401317 is not an ancestor of HEAD (rebase, force-push or different branch); file comparison is unreliable",
+    "seconds": 0.7858982499747071
    },
    {
     "id": "detached_at_older_commit",
@@ -1188,7 +1187,7 @@
     "finding_expected": "branch changed",
     "finding_ok": true,
     "top_finding": "branch changed: main -> (detached)",
-    "seconds": 0.6813584580086172
+    "seconds": 0.4251428749994375
    },
    {
     "id": "orphan_branch",
@@ -1200,7 +1199,7 @@
     "finding_expected": "branch changed",
     "finding_ok": true,
     "top_finding": "branch changed: main -> fresh",
-    "seconds": 1.0091452499909792
+    "seconds": 0.7054756249999627
    },
    {
     "id": "delete_original_branch",
@@ -1212,7 +1211,7 @@
     "finding_expected": "branch changed",
     "finding_ok": true,
     "top_finding": "branch changed: main -> tmp",
-    "seconds": 1.308526333014015
+    "seconds": 0.7303420000243932
    },
    {
     "id": "state_empty_object",
@@ -1224,7 +1223,7 @@
     "finding_expected": "no checkpoint",
     "finding_ok": true,
     "top_finding": "no checkpoint found; create one with `contextbridge save` in the original session",
-    "seconds": 1.0236172500008252
+    "seconds": 0.6568919999990612
    },
    {
     "id": "state_snapshot_null",
@@ -1236,7 +1235,7 @@
     "finding_expected": "no checkpoint",
     "finding_ok": true,
     "top_finding": "no checkpoint found; create one with `contextbridge save` in the original session",
-    "seconds": 1.013438333000522
+    "seconds": 0.6490574579802342
    },
    {
     "id": "graph_corrupt",
@@ -1248,7 +1247,7 @@
     "finding_expected": "not valid JSON",
     "finding_ok": true,
     "top_finding": "contextbridge/graph.json is not valid JSON (Expecting property name enclosed in double quotes: line 1 column 2 (char 1)); fix or delete it",
-    "seconds": 0.9607773330062628
+    "seconds": 0.6494366659899242
    },
    {
     "id": "sessions_corrupt",
@@ -1260,19 +1259,19 @@
     "finding_expected": "not valid JSON",
     "finding_ok": true,
     "top_finding": "contextbridge/sessions.json is not valid JSON (Expecting value: line 1 column 4 (char 3)); fix or delete it",
-    "seconds": 0.9122513749753125
+    "seconds": 0.6415088329813443
    },
    {
     "id": "state_wrong_type",
     "description": "state.json is a JSON list",
     "family": "state",
     "expected": "BLOCKED",
-    "got": "CRASH:Traceback (most recent call last):\n  File \"<frozen runpy>\", line 203, in _run_module_as_ma",
-    "verdict_ok": false,
+    "got": "BLOCKED",
+    "verdict_ok": true,
     "finding_expected": null,
     "finding_ok": true,
-    "top_finding": null,
-    "seconds": 0.9041615000169259
+    "top_finding": "contextbridge/state.json is not a JSON object (found list); fix or delete it",
+    "seconds": 0.651012541988166
    },
    {
     "id": "assumption_file_renamed",
@@ -1284,7 +1283,7 @@
     "finding_expected": "no longer exists",
     "finding_ok": true,
     "top_finding": "A1 'a() exists': src/a.py no longer exists",
-    "seconds": 0.9484675410203636
+    "seconds": 0.7031380409898702
    },
    {
     "id": "decision_test_changed",
@@ -1296,7 +1295,7 @@
     "finding_expected": "revisit decision",
     "finding_ok": true,
     "top_finding": "tests/test_a.py: new uncommitted change since checkpoint",
-    "seconds": 0.956680959003279
+    "seconds": 0.6897834170085844
    },
    {
     "id": "session_overlap_modified",
@@ -1308,7 +1307,7 @@
     "finding_expected": "both claims cover modified files",
     "finding_ok": true,
     "top_finding": "src/auth/x.py: new uncommitted change since checkpoint",
-    "seconds": 1.300634999992326
+    "seconds": 0.8606391249923036
    },
    {
     "id": "stash_u_removes_untracked_notes",
@@ -1320,7 +1319,7 @@
     "finding_expected": "no checkpoint",
     "finding_ok": true,
     "top_finding": "no checkpoint found; create one with `contextbridge save` in the original session",
-    "seconds": 1.124245291983243
+    "seconds": 0.7266189999936614
    },
    {
     "id": "stash_u_with_local_only",
@@ -1332,7 +1331,7 @@
     "finding_expected": null,
     "finding_ok": true,
     "top_finding": null,
-    "seconds": 1.5085995830013417
+    "seconds": 0.8104227500152774
    },
    {
     "id": "git_clean_fd_removes_notes",
@@ -1344,7 +1343,7 @@
     "finding_expected": "no checkpoint",
     "finding_ok": true,
     "top_finding": "no checkpoint found; create one with `contextbridge save` in the original session",
-    "seconds": 1.1275013750127982
+    "seconds": 0.7034588330134284
    },
    {
     "id": "git_clean_fd_with_local_only",
@@ -1356,7 +1355,7 @@
     "finding_expected": null,
     "finding_ok": true,
     "top_finding": null,
-    "seconds": 1.2004432500107214
+    "seconds": 0.8081574590178207
    },
    {
     "id": "wip_survives_untouched",
@@ -1368,7 +1367,7 @@
     "finding_expected": null,
     "finding_ok": true,
     "top_finding": null,
-    "seconds": 1.0940264590026345
+    "seconds": 0.7188737909891643
    },
    {
     "id": "wip_plus_new_file",
@@ -1380,7 +1379,7 @@
     "finding_expected": "new uncommitted change",
     "finding_ok": true,
     "top_finding": "n.txt: new uncommitted change since checkpoint",
-    "seconds": 1.1456225409929175
+    "seconds": 0.8765886669862084
    },
    {
     "id": "no_evidence_no_claim_edit",
@@ -1392,7 +1391,7 @@
     "finding_expected": null,
     "finding_ok": true,
     "top_finding": "src/a.py: new uncommitted change since checkpoint",
-    "seconds": 1.3502076659933664
+    "seconds": 0.5043019170116168
    }
   ],
   "fuzz": {
@@ -1450,31 +1449,31 @@
     "workers": 2,
     "runs_each": 10,
     "expected": 20,
-    "recorded": 10,
-    "unique_ids": 10,
+    "recorded": 20,
+    "unique_ids": 20,
     "state_valid_json": true,
-    "lost": 10,
-    "seconds": 0.964020416024141
+    "lost": 0,
+    "seconds": 1.4901545830070972
    },
    {
     "workers": 4,
     "runs_each": 10,
     "expected": 40,
-    "recorded": 10,
-    "unique_ids": 10,
+    "recorded": 40,
+    "unique_ids": 40,
     "state_valid_json": true,
-    "lost": 30,
-    "seconds": 1.1281000419985503
+    "lost": 0,
+    "seconds": 2.6698254579969216
    },
    {
     "workers": 8,
     "runs_each": 5,
     "expected": 40,
-    "recorded": 5,
-    "unique_ids": 5,
+    "recorded": 40,
+    "unique_ids": 40,
     "state_valid_json": true,
-    "lost": 35,
-    "seconds": 0.8592319999879692
+    "lost": 0,
+    "seconds": 2.4969315420021303
    }
   ],
   "scanner": {
@@ -1569,6 +1568,41 @@
      "recall": 1.0,
      "redaction_clean": 1.0
     },
+    "gitlab_pat": {
+     "n": 1000,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "huggingface": {
+     "n": 1000,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "pypi_token": {
+     "n": 1000,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "digitalocean": {
+     "n": 1000,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "shopify": {
+     "n": 1000,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "mailchimp": {
+     "n": 1000,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
+    "telegram_bot": {
+     "n": 1000,
+     "recall": 1.0,
+     "redaction_clean": 1.0
+    },
     "azure_account_key": {
      "n": 1000,
      "recall": 1.0,
@@ -1596,7 +1630,7 @@
     },
     "token_env": {
      "n": 1000,
-     "recall": 0.998,
+     "recall": 0.994,
      "redaction_clean": 1.0
     }
    },
@@ -1625,26 +1659,6 @@
      "n": 1000,
      "recall": 0.0,
      "redaction_clean": null
-    },
-    "digitalocean_pat": {
-     "n": 1000,
-     "recall": 0.0,
-     "redaction_clean": null
-    },
-    "shopify_token": {
-     "n": 1000,
-     "recall": 0.0,
-     "redaction_clean": null
-    },
-    "mailchimp_key": {
-     "n": 1000,
-     "recall": 0.0,
-     "redaction_clean": null
-    },
-    "telegram_bot_token": {
-     "n": 1000,
-     "recall": 0.0,
-     "redaction_clean": null
     }
    },
    "corpora": {
@@ -1652,53 +1666,11 @@
      "files": 1852,
      "lines": 979577,
      "mb": 36.036124,
-     "seconds": 5.255633166991174,
-     "mb_per_s": 6.856666524279227,
-     "flagged": 24,
-     "per_million_lines": 24.50037107853696,
+     "seconds": 9.23956995800836,
+     "mb_per_s": 3.9001949402164366,
+     "flagged": 10,
+     "per_million_lines": 10.2084879493904,
      "samples": [
-      [
-       "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/_pyrepl/_module_completer.py",
-       253,
-       "generic-secret",
-       "self.tokens = TokenQueue(tokens[::-1])"
-      ],
-      [
-       "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/getpass.py",
-       202,
-       "generic-secret",
-       "passwd = passwd[:-1]"
-      ],
-      [
-       "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/plistlib.py",
-       551,
-       "generic-secret",
-       "token = self._fp.read(1)[0]"
-      ],
-      [
-       "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/test/test_capi/test_type.py",
-       141,
-       "generic-secret",
-       "tokenA1 = get_token(A1)"
-      ],
-      [
-       "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/test/test_context.py",
-       494,
-       "generic-secret",
-       "token = c.set(36)"
-      ],
-      [
-       "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/test/test_context.py",
-       550,
-       "generic-secret",
-       "token = c.set(24)"
-      ],
-      [
-       "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/test/test_email/test__header_value_parser.py",
-       3461,
-       "generic-secret",
-       "token = parser.get_address_list(text)[0]"
-      ],
       [
        "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/test/test_getpass.py",
        181,
@@ -1712,22 +1684,52 @@
        "self.assertEqual('Password: *******\\x08 \\x08', mock_output.getvalue())"
       ],
       [
-       "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/test/test_smtplib.py",
-       911,
-       "generic-secret",
-       "password = self._decode_base64(arg)"
+       "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/test/test_urllib2.py",
+       1945,
+       "url-password",
+       "('http://joe:password@proxy.example.com/',"
       ],
       [
-       "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/test/test_smtplib.py",
-       1247,
-       "generic-secret",
-       "smtp.user, smtp.password = sim_auth[0], sim_auth[1]"
+       "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/test/test_urllib2.py",
+       1947,
+       "url-password",
+       "('http://joe:password@proxy.example.com:3128',"
       ],
       [
-       "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/test/test_tokenize.py",
-       1345,
-       "generic-secret",
-       "extra_tokens=True))[:-2]"
+       "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/test/test_urllib2.py",
+       1950,
+       "url-password",
+       "('ftp://joe:password@proxy.example.com/rubbish:3128',"
+      ],
+      [
+       "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/test/test_urllib2.py",
+       1953,
+       "url-password",
+       "('http://joe:password@proxy.example.com',"
+      ],
+      [
+       "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/test/test_urllib2net.py",
+       110,
+       "url-password",
+       "#                          urllib2.urlopen, \"http://evil:thing@example.com\")"
+      ],
+      [
+       "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/test/test_urlparse.py",
+       805,
+       "url-password",
+       "url = \"http://User:Pass@www.python.org:080/doc/?query=yes#frag\""
+      ],
+      [
+       "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/test/test_urlparse.py",
+       849,
+       "url-password",
+       "url = b\"http://User:Pass@www.python.org:080/doc/?query=yes#frag\""
+      ],
+      [
+       "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/test/test_urlparse.py",
+       920,
+       "url-password",
+       "base_url = \"http://User:Pass@www.python.org:080/doc/?query=yes#frag\""
       ]
      ]
     },
@@ -1735,82 +1737,76 @@
      "files": 3999,
      "lines": 758396,
      "mb": 39.342794,
-     "seconds": 5.665584458998637,
-     "mb_per_s": 6.944172182891371,
-     "flagged": 59,
-     "per_million_lines": 77.79576896502618,
+     "seconds": 10.160436832986306,
+     "mb_per_s": 3.872155759314588,
+     "flagged": 11,
+     "per_million_lines": 14.504295908733695,
      "samples": [
       [
-       "/Users/abhinay/Abhi/Projects/contextbridge-site/node_modules/typescript/lib/_tsserver.js",
-       286,
-       "generic-secret",
-       "const cancellationToken = createCancellationToken(sys4.args);"
-      ],
-      [
-       "/Users/abhinay/Abhi/Projects/contextbridge-site/node_modules/next/dist/server/accept-header.js",
-       52,
-       "generic-secret",
-       "let token = params[0].toLowerCase();"
-      ],
-      [
-       "/Users/abhinay/Abhi/Projects/contextbridge-site/node_modules/next/dist/build/polyfills/polyfill-nomodule.js",
-       1,
-       "generic-secret",
-       "!function(){var t=\"undefined\"!=typeof globalThis?globalThis:\"undefined\"!=typeof window?window:\"undef"
-      ],
-      [
-       "/Users/abhinay/Abhi/Projects/contextbridge-site/node_modules/next/dist/compiled/acorn/acorn.js",
-       1,
-       "generic-secret",
-       "(()=>{var e={533:function(e,t){(function(e,i){true?i(t):0})(this,(function(e){\"use strict\";var t=[50"
-      ],
-      [
-       "/Users/abhinay/Abhi/Projects/contextbridge-site/node_modules/next/dist/compiled/acorn/acorn.js",
-       1,
-       "generic-secret",
-       "(()=>{var e={533:function(e,t){(function(e,i){true?i(t):0})(this,(function(e){\"use strict\";var t=[50"
-      ],
-      [
-       "/Users/abhinay/Abhi/Projects/contextbridge-site/node_modules/next/dist/compiled/acorn/acorn.js",
-       1,
-       "generic-secret",
-       "(()=>{var e={533:function(e,t){(function(e,i){true?i(t):0})(this,(function(e){\"use strict\";var t=[50"
-      ],
-      [
-       "/Users/abhinay/Abhi/Projects/contextbridge-site/node_modules/next/dist/compiled/acorn/acorn.js",
-       1,
-       "generic-secret",
-       "(()=>{var e={533:function(e,t){(function(e,i){true?i(t):0})(this,(function(e){\"use strict\";var t=[50"
-      ],
-      [
-       "/Users/abhinay/Abhi/Projects/contextbridge-site/node_modules/next/dist/compiled/picomatch/index.js",
-       1,
-       "generic-secret",
-       "(()=>{\"use strict\";var t={170:(t,e,u)=>{const n=u(510);const isWindows=()=>{if(typeof navigator!==\"u"
-      ],
-      [
        "/Users/abhinay/Abhi/Projects/contextbridge-site/node_modules/next/dist/compiled/comment-json/index.js",
        1,
        "generic-secret",
        "(()=>{var e={281:(e,t,i)=>{const r=i(277);const{isObject:s,isArray:n}=i(504);const a=\"before\";const "
       ],
       [
-       "/Users/abhinay/Abhi/Projects/contextbridge-site/node_modules/next/dist/compiled/comment-json/index.js",
+       "/Users/abhinay/Abhi/Projects/contextbridge-site/node_modules/next/dist/compiled/postcss-scss/scss-syntax.js",
        1,
        "generic-secret",
-       "(()=>{var e={281:(e,t,i)=>{const r=i(277);const{isObject:s,isArray:n}=i(504);const a=\"before\";const "
+       "(()=>{var e={375:(e,t,r)=>{const{Container:s}=r(977);class NestedDeclaration extends s{constructor(e"
       ],
       [
-       "/Users/abhinay/Abhi/Projects/contextbridge-site/node_modules/next/dist/compiled/comment-json/index.js",
+       "/Users/abhinay/Abhi/Projects/contextbridge-site/node_modules/next/dist/compiled/next-server/app-route-turbo-experimental.runtime.dev.js",
        1,
        "generic-secret",
-       "(()=>{var e={281:(e,t,i)=>{const r=i(277);const{isObject:s,isArray:n}=i(504);const a=\"before\";const "
+       "(()=>{var __webpack_modules__={\"./dist/compiled/@edge-runtime/cookies/index.js\":function(module1){\"u"
       ],
       [
-       "/Users/abhinay/Abhi/Projects/contextbridge-site/node_modules/next/dist/compiled/comment-json/index.js",
+       "/Users/abhinay/Abhi/Projects/contextbridge-site/node_modules/next/dist/compiled/next-server/pages-turbo.runtime.dev.js",
        1,
        "generic-secret",
-       "(()=>{var e={281:(e,t,i)=>{const r=i(277);const{isObject:s,isArray:n}=i(504);const a=\"before\";const "
+       "(()=>{var __webpack_modules__={\"./dist/compiled/@edge-runtime/cookies/index.js\":function(module1){\"u"
+      ],
+      [
+       "/Users/abhinay/Abhi/Projects/contextbridge-site/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js",
+       1,
+       "generic-secret",
+       "(()=>{var __webpack_modules__={\"./dist/compiled/@edge-runtime/cookies/index.js\":function(module1){\"u"
+      ],
+      [
+       "/Users/abhinay/Abhi/Projects/contextbridge-site/node_modules/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js",
+       1,
+       "generic-secret",
+       "(()=>{var __webpack_modules__={\"./dist/compiled/@edge-runtime/cookies/index.js\":function(module1){\"u"
+      ],
+      [
+       "/Users/abhinay/Abhi/Projects/contextbridge-site/node_modules/next/dist/compiled/next-server/pages.runtime.dev.js",
+       1,
+       "generic-secret",
+       "(()=>{var __webpack_modules__={\"./dist/compiled/@edge-runtime/cookies/index.js\":function(module1){\"u"
+      ],
+      [
+       "/Users/abhinay/Abhi/Projects/contextbridge-site/node_modules/next/dist/compiled/next-server/pages-api.runtime.dev.js",
+       1,
+       "generic-secret",
+       "(()=>{var __webpack_modules__={\"./dist/compiled/@edge-runtime/cookies/index.js\":function(module1){\"u"
+      ],
+      [
+       "/Users/abhinay/Abhi/Projects/contextbridge-site/node_modules/next/dist/compiled/next-server/pages-api-turbo.runtime.dev.js",
+       1,
+       "generic-secret",
+       "(()=>{var __webpack_modules__={\"./dist/compiled/@edge-runtime/cookies/index.js\":function(module1){\"u"
+      ],
+      [
+       "/Users/abhinay/Abhi/Projects/contextbridge-site/node_modules/next/dist/compiled/next-server/app-route-experimental.runtime.dev.js",
+       1,
+       "generic-secret",
+       "(()=>{var __webpack_modules__={\"./dist/compiled/@edge-runtime/cookies/index.js\":function(module1){\"u"
+      ],
+      [
+       "/Users/abhinay/Abhi/Projects/contextbridge-site/node_modules/next/dist/compiled/postcss-safe-parser/safe-parse.js",
+       1,
+       "generic-secret",
+       "(()=>{var e={448:(e,t,r)=>{let s=process.argv||[],i=process.env;let n=!(\"NO_COLOR\"in i||s.includes(\""
       ]
      ]
     },
@@ -1818,20 +1814,20 @@
      "files": 5,
      "lines": 47714,
      "mb": 1.690789,
-     "seconds": 0.20889549999265,
-     "mb_per_s": 8.093946495063276,
+     "seconds": 0.3892566659778822,
+     "mb_per_s": 4.343635312583373,
      "flagged": 0,
      "per_million_lines": 0.0,
      "samples": []
     },
     "markdown_docs": {
      "files": 27,
-     "lines": 2085,
-     "mb": 0.107113,
-     "seconds": 0.02274641700205393,
-     "mb_per_s": 4.709005378312023,
+     "lines": 2105,
+     "mb": 0.109414,
+     "seconds": 0.036242291011149064,
+     "mb_per_s": 3.0189592585728486,
      "flagged": 1,
-     "per_million_lines": 479.6163069544365,
+     "per_million_lines": 475.05938242280286,
      "samples": [
       [
        "/Users/abhinay/Abhi/Projects/krishisetu/README.md",
@@ -1856,8 +1852,8 @@
     {
      "id": "touch_mtime_only",
      "kind": "full",
-     "cl100k": 467,
-     "o200k": 471,
+     "cl100k": 469,
+     "o200k": 472,
      "chars": 1722,
      "est": 432
     },
@@ -1873,60 +1869,12 @@
      "id": "git_gc",
      "kind": "full",
      "cl100k": 468,
-     "o200k": 471,
-     "chars": 1722,
-     "est": 432
-    },
-    {
-     "id": "add_lightweight_tag",
-     "kind": "gate",
-     "cl100k": 30,
-     "o200k": 30,
-     "chars": 158,
-     "est": 39
-    },
-    {
-     "id": "add_lightweight_tag",
-     "kind": "full",
-     "cl100k": 467,
-     "o200k": 471,
-     "chars": 1722,
-     "est": 432
-    },
-    {
-     "id": "checkout_same_branch",
-     "kind": "gate",
-     "cl100k": 30,
-     "o200k": 30,
-     "chars": 158,
-     "est": 39
-    },
-    {
-     "id": "checkout_same_branch",
-     "kind": "full",
-     "cl100k": 467,
-     "o200k": 471,
-     "chars": 1722,
-     "est": 432
-    },
-    {
-     "id": "worktree_added",
-     "kind": "gate",
-     "cl100k": 30,
-     "o200k": 30,
-     "chars": 158,
-     "est": 39
-    },
-    {
-     "id": "worktree_added",
-     "kind": "full",
-     "cl100k": 467,
      "o200k": 472,
      "chars": 1722,
      "est": 432
     },
     {
-     "id": "ignored_200_files",
+     "id": "add_lightweight_tag",
      "kind": "gate",
      "cl100k": 30,
      "o200k": 30,
@@ -1934,10 +1882,58 @@
      "est": 39
     },
     {
-     "id": "ignored_200_files",
+     "id": "add_lightweight_tag",
      "kind": "full",
      "cl100k": 468,
      "o200k": 472,
+     "chars": 1722,
+     "est": 432
+    },
+    {
+     "id": "checkout_same_branch",
+     "kind": "gate",
+     "cl100k": 30,
+     "o200k": 30,
+     "chars": 158,
+     "est": 39
+    },
+    {
+     "id": "checkout_same_branch",
+     "kind": "full",
+     "cl100k": 466,
+     "o200k": 470,
+     "chars": 1722,
+     "est": 432
+    },
+    {
+     "id": "worktree_added",
+     "kind": "gate",
+     "cl100k": 30,
+     "o200k": 30,
+     "chars": 158,
+     "est": 39
+    },
+    {
+     "id": "worktree_added",
+     "kind": "full",
+     "cl100k": 469,
+     "o200k": 473,
+     "chars": 1722,
+     "est": 432
+    },
+    {
+     "id": "ignored_200_files",
+     "kind": "gate",
+     "cl100k": 30,
+     "o200k": 30,
+     "chars": 158,
+     "est": 39
+    },
+    {
+     "id": "ignored_200_files",
+     "kind": "full",
+     "cl100k": 466,
+     "o200k": 470,
      "chars": 1722,
      "est": 432
     },
@@ -1968,8 +1964,8 @@
     {
      "id": "pem_file",
      "kind": "full",
-     "cl100k": 468,
-     "o200k": 472,
+     "cl100k": 467,
+     "o200k": 471,
      "chars": 1722,
      "est": 432
     },
@@ -1983,22 +1979,6 @@
     },
     {
      "id": "credentials_json",
-     "kind": "full",
-     "cl100k": 468,
-     "o200k": 472,
-     "chars": 1722,
-     "est": 432
-    },
-    {
-     "id": "custom_ignore_pattern",
-     "kind": "gate",
-     "cl100k": 30,
-     "o200k": 30,
-     "chars": 158,
-     "est": 39
-    },
-    {
-     "id": "custom_ignore_pattern",
      "kind": "full",
      "cl100k": 467,
      "o200k": 471,
@@ -2006,6 +1986,22 @@
      "est": 432
     },
     {
+     "id": "custom_ignore_pattern",
+     "kind": "gate",
+     "cl100k": 30,
+     "o200k": 30,
+     "chars": 158,
+     "est": 39
+    },
+    {
+     "id": "custom_ignore_pattern",
+     "kind": "full",
+     "cl100k": 468,
+     "o200k": 472,
+     "chars": 1722,
+     "est": 432
+    },
+    {
      "id": "edit_then_restore",
      "kind": "gate",
      "cl100k": 30,
@@ -2016,8 +2012,8 @@
     {
      "id": "edit_then_restore",
      "kind": "full",
-     "cl100k": 468,
-     "o200k": 472,
+     "cl100k": 467,
+     "o200k": 471,
      "chars": 1722,
      "est": 432
     },
@@ -2032,8 +2028,8 @@
     {
      "id": "add_then_delete_untracked",
      "kind": "full",
-     "cl100k": 468,
-     "o200k": 472,
+     "cl100k": 467,
+     "o200k": 471,
      "chars": 1722,
      "est": 432
     },
@@ -2048,58 +2044,58 @@
     {
      "id": "commit_then_hard_reset_back",
      "kind": "full",
-     "cl100k": 468,
-     "o200k": 472,
+     "cl100k": 470,
+     "o200k": 474,
      "chars": 1722,
      "est": 432
     },
     {
      "id": "edit_10_files",
      "kind": "gate",
-     "cl100k": 202,
-     "o200k": 211,
-     "chars": 828,
-     "est": 207
+     "cl100k": 144,
+     "o200k": 149,
+     "chars": 603,
+     "est": 150
     },
     {
      "id": "edit_10_files",
      "kind": "full",
-     "cl100k": 640,
-     "o200k": 653,
-     "chars": 2392,
-     "est": 599
+     "cl100k": 584,
+     "o200k": 593,
+     "chars": 2167,
+     "est": 543
     },
     {
      "id": "edit_50_untracked",
      "kind": "gate",
-     "cl100k": 802,
-     "o200k": 851,
-     "chars": 3278,
-     "est": 819
+     "cl100k": 144,
+     "o200k": 149,
+     "chars": 612,
+     "est": 153
     },
     {
      "id": "edit_50_untracked",
      "kind": "full",
-     "cl100k": 1240,
-     "o200k": 1293,
-     "chars": 4842,
-     "est": 1212
+     "cl100k": 583,
+     "o200k": 592,
+     "chars": 2176,
+     "est": 545
     },
     {
      "id": "untracked_1000_files",
      "kind": "gate",
-     "cl100k": 15052,
-     "o200k": 16051,
-     "chars": 62128,
-     "est": 15532
+     "cl100k": 144,
+     "o200k": 149,
+     "chars": 615,
+     "est": 153
     },
     {
      "id": "untracked_1000_files",
      "kind": "full",
-     "cl100k": 15489,
-     "o200k": 16492,
-     "chars": 63692,
-     "est": 15924
+     "cl100k": 580,
+     "o200k": 589,
+     "chars": 2179,
+     "est": 546
     },
     {
      "id": "large_file_20mb",
@@ -2113,7 +2109,7 @@
      "id": "large_file_20mb",
      "kind": "full",
      "cl100k": 503,
-     "o200k": 506,
+     "o200k": 507,
      "chars": 1859,
      "est": 466
     },
@@ -2128,8 +2124,8 @@
     {
      "id": "crlf_conversion",
      "kind": "full",
-     "cl100k": 522,
-     "o200k": 526,
+     "cl100k": 523,
+     "o200k": 527,
      "chars": 1931,
      "est": 484
     },
@@ -2160,8 +2156,8 @@
     {
      "id": "case_only_rename",
      "kind": "full",
-     "cl100k": 505,
-     "o200k": 509,
+     "cl100k": 504,
+     "o200k": 508,
      "chars": 1861,
      "est": 466
     },
@@ -2176,8 +2172,8 @@
     {
      "id": "newline_in_filename",
      "kind": "full",
-     "cl100k": 504,
-     "o200k": 508,
+     "cl100k": 506,
+     "o200k": 510,
      "chars": 1862,
      "est": 467
     },
@@ -2199,22 +2195,6 @@
     },
     {
      "id": "merge_commit",
-     "kind": "gate",
-     "cl100k": 75,
-     "o200k": 74,
-     "chars": 298,
-     "est": 74
-    },
-    {
-     "id": "merge_commit",
-     "kind": "full",
-     "cl100k": 513,
-     "o200k": 516,
-     "chars": 1862,
-     "est": 467
-    },
-    {
-     "id": "fast_forward",
      "kind": "gate",
      "cl100k": 73,
      "o200k": 72,
@@ -2222,7 +2202,7 @@
      "est": 74
     },
     {
-     "id": "fast_forward",
+     "id": "merge_commit",
      "kind": "full",
      "cl100k": 510,
      "o200k": 513,
@@ -2230,10 +2210,26 @@
      "est": 467
     },
     {
+     "id": "fast_forward",
+     "kind": "gate",
+     "cl100k": 75,
+     "o200k": 74,
+     "chars": 298,
+     "est": 74
+    },
+    {
+     "id": "fast_forward",
+     "kind": "full",
+     "cl100k": 512,
+     "o200k": 515,
+     "chars": 1862,
+     "est": 467
+    },
+    {
      "id": "cherry_pick",
      "kind": "gate",
-     "cl100k": 76,
-     "o200k": 75,
+     "cl100k": 75,
+     "o200k": 74,
      "chars": 298,
      "est": 74
     },
@@ -2248,16 +2244,16 @@
     {
      "id": "commit_then_revert",
      "kind": "gate",
-     "cl100k": 76,
-     "o200k": 75,
+     "cl100k": 74,
+     "o200k": 73,
      "chars": 298,
      "est": 74
     },
     {
      "id": "commit_then_revert",
      "kind": "full",
-     "cl100k": 514,
-     "o200k": 517,
+     "cl100k": 511,
+     "o200k": 514,
      "chars": 1862,
      "est": 467
     },
@@ -2272,8 +2268,8 @@
     {
      "id": "stash_pop_roundtrip",
      "kind": "full",
-     "cl100k": 522,
-     "o200k": 526,
+     "cl100k": 523,
+     "o200k": 527,
      "chars": 1931,
      "est": 484
     },
@@ -2288,42 +2284,42 @@
     {
      "id": "soft_reset_keeps_changes",
      "kind": "full",
-     "cl100k": 503,
-     "o200k": 507,
+     "cl100k": 502,
+     "o200k": 506,
      "chars": 1861,
      "est": 466
     },
     {
      "id": "main_moved_unrelated",
      "kind": "gate",
-     "cl100k": 172,
-     "o200k": 172,
+     "cl100k": 175,
+     "o200k": 175,
      "chars": 694,
      "est": 173
     },
     {
      "id": "main_moved_unrelated",
      "kind": "full",
-     "cl100k": 172,
-     "o200k": 172,
+     "cl100k": 175,
+     "o200k": 175,
      "chars": 694,
      "est": 173
     },
     {
      "id": "orphan_branch",
      "kind": "gate",
-     "cl100k": 287,
-     "o200k": 295,
-     "chars": 1228,
-     "est": 307
+     "cl100k": 262,
+     "o200k": 268,
+     "chars": 1113,
+     "est": 278
     },
     {
      "id": "orphan_branch",
      "kind": "full",
-     "cl100k": 287,
-     "o200k": 295,
-     "chars": 1228,
-     "est": 307
+     "cl100k": 262,
+     "o200k": 268,
+     "chars": 1113,
+     "est": 278
     },
     {
      "id": "delete_original_branch",
@@ -2408,18 +2404,18 @@
     {
      "id": "state_wrong_type",
      "kind": "gate",
-     "cl100k": 0,
-     "o200k": 0,
-     "chars": 0,
-     "est": 0
+     "cl100k": 62,
+     "o200k": 62,
+     "chars": 281,
+     "est": 70
     },
     {
      "id": "state_wrong_type",
      "kind": "full",
-     "cl100k": 0,
-     "o200k": 0,
-     "chars": 0,
-     "est": 0
+     "cl100k": 62,
+     "o200k": 62,
+     "chars": 281,
+     "est": 70
     },
     {
      "id": "assumption_file_renamed",
@@ -2432,8 +2428,8 @@
     {
      "id": "assumption_file_renamed",
      "kind": "full",
-     "cl100k": 539,
-     "o200k": 542,
+     "cl100k": 537,
+     "o200k": 541,
      "chars": 1957,
      "est": 490
     },
@@ -2448,8 +2444,8 @@
     {
      "id": "decision_test_changed",
      "kind": "full",
-     "cl100k": 526,
-     "o200k": 529,
+     "cl100k": 524,
+     "o200k": 528,
      "chars": 1945,
      "est": 487
     },
@@ -2464,8 +2460,8 @@
     {
      "id": "session_overlap_modified",
      "kind": "full",
-     "cl100k": 539,
-     "o200k": 543,
+     "cl100k": 538,
+     "o200k": 542,
      "chars": 1991,
      "est": 499
     },
@@ -2496,8 +2492,8 @@
     {
      "id": "stash_u_with_local_only",
      "kind": "full",
-     "cl100k": 466,
-     "o200k": 470,
+     "cl100k": 467,
+     "o200k": 471,
      "chars": 1722,
      "est": 432
     },
@@ -2544,8 +2540,8 @@
     {
      "id": "wip_survives_untouched",
      "kind": "full",
-     "cl100k": 472,
-     "o200k": 476,
+     "cl100k": 473,
+     "o200k": 477,
      "chars": 1741,
      "est": 436
     },
@@ -2560,8 +2556,8 @@
     {
      "id": "wip_plus_new_file",
      "kind": "full",
-     "cl100k": 505,
-     "o200k": 509,
+     "cl100k": 508,
+     "o200k": 512,
      "chars": 1876,
      "est": 470
     },
@@ -2585,22 +2581,22 @@
    "scaling": [
     {
      "work_items": 10,
-     "handoff": 531,
-     "resume_full": 826,
+     "handoff": 529,
+     "resume_full": 824,
      "gate_only": 203,
-     "raw_state_json": 1058,
-     "handoff_o200k": 534,
-     "resume_full_o200k": 828,
+     "raw_state_json": 1053,
+     "handoff_o200k": 532,
+     "resume_full_o200k": 826,
      "gate_o200k": 202
     },
     {
      "work_items": 50,
-     "handoff": 1783,
-     "resume_full": 2092,
+     "handoff": 1781,
+     "resume_full": 2090,
      "gate_only": 217,
-     "raw_state_json": 4525,
-     "handoff_o200k": 1786,
-     "resume_full_o200k": 2094,
+     "raw_state_json": 4520,
+     "handoff_o200k": 1784,
+     "resume_full_o200k": 2092,
      "gate_o200k": 216
     },
     {
@@ -2608,7 +2604,7 @@
      "handoff": 2621,
      "resume_full": 2930,
      "gate_only": 217,
-     "raw_state_json": 8851,
+     "raw_state_json": 8855,
      "handoff_o200k": 2624,
      "resume_full_o200k": 2932,
      "gate_o200k": 216
@@ -2618,19 +2614,19 @@
      "handoff": 2621,
      "resume_full": 2930,
      "gate_only": 217,
-     "raw_state_json": 21851,
+     "raw_state_json": 21853,
      "handoff_o200k": 2624,
      "resume_full_o200k": 2932,
      "gate_o200k": 216
     },
     {
      "work_items": 500,
-     "handoff": 2623,
-     "resume_full": 2932,
+     "handoff": 2621,
+     "resume_full": 2930,
      "gate_only": 217,
-     "raw_state_json": 43523,
-     "handoff_o200k": 2626,
-     "resume_full_o200k": 2934,
+     "raw_state_json": 43520,
+     "handoff_o200k": 2624,
+     "resume_full_o200k": 2932,
      "gate_o200k": 216
     },
     {
@@ -2638,7 +2634,7 @@
      "handoff": 2622,
      "resume_full": 2931,
      "gate_only": 217,
-     "raw_state_json": 86857,
+     "raw_state_json": 86851,
      "handoff_o200k": 2625,
      "resume_full_o200k": 2933,
      "gate_o200k": 216
@@ -2648,7 +2644,7 @@
     {
      "repo": "ContextBridge (this tool)",
      "tracked_files": 34,
-     "resume_full": 385,
+     "resume_full": 391,
      "gate_only": 30,
      "git_orientation_dump": 1800,
      "file_listing": 203
@@ -2668,39 +2664,47 @@
      "gate_only": 30,
      "git_orientation_dump": 6569,
      "file_listing": 3797
+    },
+    {
+     "repo": "ContextBridge site",
+     "tracked_files": 35,
+     "resume_full": 381,
+     "gate_only": 30,
+     "git_orientation_dump": 513,
+     "file_listing": 210
     }
    ],
    "summary_gate": {
-    "n": 45,
-    "median": 65,
-    "p90": 172,
-    "max": 15052,
+    "n": 46,
+    "median": 65.0,
+    "p90": 114,
+    "max": 262,
     "min": 30,
-    "mean": 417.8666666666667
+    "mean": 69.93478260869566
    },
    "summary_full": {
-    "n": 45,
-    "median": 468,
-    "p90": 539,
-    "max": 15489,
+    "n": 46,
+    "median": 468.5,
+    "p90": 537,
+    "max": 584,
     "min": 51,
-    "mean": 766.4444444444445
+    "mean": 411.0217391304348
    },
    "tokenizers": "cl100k_base and o200k_base (tiktoken) are proxies; Claude's tokenizer is not available offline. est = UTF-8 bytes / 4."
   },
   "io": {
    "work_items": 500,
-   "export_s": 0.06711608299519867,
-   "import_s": 0.06790412499685772,
+   "export_s": 0.08405579201644287,
+   "import_s": 0.09832516600727104,
    "bundle_bytes": 88474
   },
   "stability": {
    "python": "3.14.6",
    "runs": 15,
    "passed": 15,
-   "tests_per_run": 31,
-   "seconds_median": 7.079288917011581,
-   "seconds_max": 7.5289105830015615,
+   "tests_per_run": 36,
+   "seconds_median": 12.020416334009496,
+   "seconds_max": 14.597254957974656,
    "failures": []
   },
   "python_matrix": [
@@ -2708,104 +2712,61 @@
     "python": "Python 3.11.13",
     "runs": 3,
     "passed": 3,
-    "tests": 31,
-    "seconds": 6.266898082976695,
+    "tests": 36,
+    "seconds": 10.869364625017624,
     "failures": []
    },
    {
     "python": "Python 3.14.6",
     "runs": 3,
     "passed": 3,
-    "tests": 31,
-    "seconds": 6.970616082980996,
+    "tests": 36,
+    "seconds": 12.951549792021979,
     "failures": []
    }
   ],
   "packaging": {
    "build_ok": true,
-   "wheel_bytes": 23208,
-   "sdist_bytes": 32380,
+   "wheel_bytes": 25002,
+   "sdist_bytes": 35062,
    "wheel_files": [
     "contextbridge/__init__.py",
     "contextbridge/__main__.py",
     "contextbridge/cli.py",
     "contextbridge/core.py",
     "contextbridge/features.py",
-    "contextbridge_cli-0.3.2.dist-info/licenses/LICENSE",
-    "contextbridge_cli-0.3.2.dist-info/METADATA",
-    "contextbridge_cli-0.3.2.dist-info/WHEEL",
-    "contextbridge_cli-0.3.2.dist-info/entry_points.txt",
-    "contextbridge_cli-0.3.2.dist-info/top_level.txt",
-    "contextbridge_cli-0.3.2.dist-info/RECORD"
+    "contextbridge_cli-0.3.3.dist-info/licenses/LICENSE",
+    "contextbridge_cli-0.3.3.dist-info/METADATA",
+    "contextbridge_cli-0.3.3.dist-info/WHEEL",
+    "contextbridge_cli-0.3.3.dist-info/entry_points.txt",
+    "contextbridge_cli-0.3.3.dist-info/top_level.txt",
+    "contextbridge_cli-0.3.3.dist-info/RECORD"
    ],
    "wheel_has_tests": false,
    "installs": [
     {
      "python": "Python 3.11.13",
      "install_ok": true,
-     "install_seconds": 0.9671122079889756,
-     "version_output": "0.3.2",
-     "startup_seconds": 0.03550187501241453,
+     "install_seconds": 0.9581991249870043,
+     "version_output": "0.3.3",
+     "startup_seconds": 0.03654604099574499,
      "smoke_verdict_ok": true,
      "runtime_dependencies": 0
     },
     {
      "python": "Python 3.14.6",
      "install_ok": true,
-     "install_seconds": 2.1151978749840055,
-     "version_output": "0.3.2",
-     "startup_seconds": 0.04370791697874665,
+     "install_seconds": 0.9457812080217991,
+     "version_output": "0.3.3",
+     "startup_seconds": 0.05087995799840428,
      "smoke_verdict_ok": true,
      "runtime_dependencies": 0
     }
    ],
-   "pyproject_version": "0.3.2"
+   "pyproject_version": "0.3.3"
   }
  },
- "findings": [
-  {
-   "id": "N1",
-   "sev": "md",
-   "title": "Concurrent writers silently lose evidence",
-   "evidence": "8 parallel writers ran 40 test runs; only 5 were recorded (35 lost). state.json always stayed valid JSON because writes are atomic.",
-   "fix": "Lock the read-modify-write of the state files (flock on POSIX, msvcrt on Windows) and reload before each save."
-  },
-  {
-   "id": "N2",
-   "sev": "md",
-   "title": "A malformed state.json crashes `resume` instead of returning BLOCKED",
-   "evidence": "A state.json containing a JSON list produced a Python traceback (AttributeError: 'list' object has no attribute 'get') rather than a BLOCKED verdict.",
-   "fix": "Validate that the top level is an object when loading and route anything else to the existing 'not valid' BLOCKED path."
-  },
-  {
-   "id": "N3",
-   "sev": "lo",
-   "title": "Gate output is unbounded when many files change",
-   "evidence": "1,000 new untracked files produced 1,000 findings, about 15,052 tokens for `resume --check`. Typical runs are a median 65 tokens.",
-   "fix": "Summarize repeated findings: show the first few and a count, as the gate already does for unverified claims."
-  },
-  {
-   "id": "N4",
-   "sev": "lo",
-   "title": "`git stash -u` and `git clean -fd` delete untracked notes",
-   "evidence": "Both commands removed the untracked contextbridge/ folder; the gate then correctly returned BLOCKED (no checkpoint). With `init --local-only` the notes survived both.",
-   "fix": "Document it and recommend `init --local-only` or committing the notes."
-  },
-  {
-   "id": "N5",
-   "sev": "lo",
-   "title": "The generic secret rule flags ordinary code",
-   "evidence": "24 lines flagged in 979,577 lines of Python stdlib (25 per million) and 59 in sampled JavaScript (78 per million), for example `token = self._fp.read(1)[0]`.",
-   "fix": "Ignore right-hand sides that are calls or attribute lookups; keep the rule strict for quoted literals."
-  },
-  {
-   "id": "N6",
-   "sev": "lo",
-   "title": "Scanner has no pattern for several common key formats",
-   "evidence": "9 of 9 uncovered formats (Telegram, Shopify, DigitalOcean, Mailchimp, bare hex and base64 secrets\u2026) are never flagged, by design for the entropy-only ones.",
-   "fix": "Add dedicated patterns for vendor-prefixed formats; keep the best-effort wording."
-  }
- ],
+ "findings": [],
  "before": {
   "drift": [
    {
