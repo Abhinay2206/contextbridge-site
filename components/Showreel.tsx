@@ -6,7 +6,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Showreel() {
   const sec = useRef<HTMLElement>(null), vid = useRef<HTMLVideoElement>(null), fill = useRef<HTMLElement>(null);
-  const [live, setLive] = useState(false), [paused, setPaused] = useState(false), [muted, setMuted] = useState(true), [t, setT] = useState("0:00"), [mobile, setMobile] = useState(false);
+  const [live, setLive] = useState(false), [paused, setPaused] = useState(false), [muted, setMuted] = useState(true), [t, setT] = useState("0:00"), [mobile, setMobile] = useState(false), [dur, setDur] = useState(0);
+  const fmt = (s: number) => `${Math.floor(s / 60)}:${String(Math.round(s) % 60).padStart(2, "0")}`;
+  const shownDur = dur || (mobile ? 45 : 59);  // fallbacks until the video reports its real length
   useEffect(() => { const q = window.matchMedia("(max-width: 900px)"); const f = () => setMobile(q.matches); f(); q.addEventListener("change", f); return () => q.removeEventListener("change", f); }, []);
 
   useEffect(() => {
@@ -28,8 +30,10 @@ export default function Showreel() {
       const s = Math.floor(v.currentTime); setT(`${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`);
     };
     const onEnd = () => { setLive(false); v.muted = true; setMuted(true); v.loop = true; v.currentTime = 0; v.play().catch(() => {}); };
+    const onMeta = () => setDur(v.duration || 0);
+    v.addEventListener("loadedmetadata", onMeta); onMeta();
     v.addEventListener("timeupdate", onTime); v.addEventListener("ended", onEnd);
-    return () => { mm.revert(); io.disconnect(); v.removeEventListener("timeupdate", onTime); v.removeEventListener("ended", onEnd); };
+    return () => { mm.revert(); io.disconnect(); v.removeEventListener("loadedmetadata", onMeta); v.removeEventListener("timeupdate", onTime); v.removeEventListener("ended", onEnd); };
   }, [live, mobile]);
 
   const start = () => { const v = vid.current!; v.loop = false; v.muted = false; v.currentTime = 0; v.play(); setMuted(false); setPaused(false); setLive(true); };
@@ -41,21 +45,21 @@ export default function Showreel() {
     <section className={`reel${live ? " live" : ""}`} id="watch" ref={sec}>
       <div className="reel-pin">
         <div className="reel-title">
-          <h2 data-lines><span className="mask"><span>Watch it in</span></span><span className="mask"><span className="it">45 seconds.</span></span></h2>
+          <h2 data-lines><span className="mask"><span>Watch it in</span></span><span className="mask"><span className="it">under a minute.</span></span></h2>
           <p>The problem · the gate<br />the handoff</p>
         </div>
         <div className="reel-frame">
           <video ref={vid} key={mobile ? "v" : "h"} src={mobile ? "/promo-9x16.mp4" : "/promo-16x9.mp4"} poster={mobile ? "/promo-poster-v.jpg" : "/promo-poster.jpg"} muted loop playsInline preload="metadata" aria-label="ContextBridge promo video" />
           <div className="reel-ui reel-play-wrap">
             <button className="reel-play" onClick={start} data-cursor aria-label="Play the promo with sound">
-              <i /><span>Play with sound<small>{mobile ? "0:45 · 9:16" : "0:45 · 16:9"}</small></span>
+              <i /><span>Play with sound<small>{fmt(shownDur)} · {mobile ? "9:16" : "16:9"}</small></span>
             </button>
           </div>
           <div className="reel-badge">Preview · muted</div>
           <div className="reel-bar">
             <button onClick={toggle}>{paused ? "Play" : "Pause"}</button>
-            <div className="reel-track" onClick={seek} role="slider" aria-label="Seek" aria-valuemin={0} aria-valuemax={45}><i ref={fill as React.RefObject<HTMLElement>} /></div>
-            <span>{t} / 0:45</span>
+            <div className="reel-track" onClick={seek} role="slider" aria-label="Seek" aria-valuemin={0} aria-valuemax={Math.round(shownDur)}><i ref={fill as React.RefObject<HTMLElement>} /></div>
+            <span>{t} / {fmt(shownDur)}</span>
             <button onClick={mute}>{muted ? "Sound off" : "Sound on"}</button>
           </div>
         </div>
