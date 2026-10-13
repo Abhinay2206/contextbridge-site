@@ -12,6 +12,7 @@ import Bento from "../components/Bento";
 import BenchTeaser from "../components/BenchTeaser";
 import Install from "../components/Install";
 import Footer from "../components/Footer";
+import { allScenarios, scenarioPass, speedTop, v2 as bench, num } from "../lib/bench";
 import { DESCRIPTION, TOOL_VERSION, PYPI_URL, REPO_URL, SITE_NAME, SITE_URL, ld } from "../lib/site";
 
 const JSON_LD = {
@@ -29,7 +30,12 @@ export default function Page() {
     <main id="main">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ld(JSON_LD) }} />
       <Motion /><Nav />
-      <Hero /><Marquee /><Showreel /><Statement />
+      <Hero stats={[
+        { v: `${scenarioPass}/${allScenarios.length}`, l: "labeled drift scenarios pass" },
+        { v: String(bench.tokens.summary_gate.median), l: "tokens: median resume check" },
+        { v: `${Math.round(speedTop.resume_check_s * 1000)} ms`, l: `to check ${num(speedTop.files)} files` },
+        { v: "0", l: "network calls, 0 dependencies" },
+      ]} /><Marquee /><Showreel /><Statement />
       <Gate /><Numbers /><Flow /><Provenance /><BenchTeaser /><Bento /><Install /><Footer />
     </main>
   );

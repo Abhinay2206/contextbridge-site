@@ -32,6 +32,7 @@ const security = [
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  distDir: process.env.NEXT_DIST_DIR || ".next",  // lets a test build run beside `next dev` without clobbering it
   poweredByHeader: false,
   async headers() {
     return [
