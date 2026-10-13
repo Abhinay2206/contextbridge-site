@@ -32,3 +32,13 @@ Both are off by default. They are read **at build time**, so set them before `np
 
 1. **Analytics:** create a GA4 property, copy its Measurement ID (`G-XXXXXXXXXX`) and set `NEXT_PUBLIC_GA_ID`. The site then loads GA4 with Consent Mode: analytics cookies stay off until the visitor accepts the banner, IP anonymization is on, and ad personalization and Google signals are disabled. The Content-Security-Policy only allows Google's domains when this variable is set.
 2. **Search Console:** add your domain as a property, choose the "HTML tag" verification method, and set `NEXT_PUBLIC_GSC_VERIFICATION` to the `content` value. After deploying, click Verify, then submit `https://your-domain/sitemap.xml`.
+
+## Updating the promo videos
+
+Put the new `ContextBridge-Promo-16x9.mp4` and `ContextBridge-Promo-9x16.mp4` in the media folder (`PROMO_SRC_DIR`, default `~/Abhi/Media/motion_videos/ContextBridge-Promo`) and run:
+
+```bash
+npm run promo
+```
+
+It converts them to small web copies in `public/`, names them by content hash (so browsers and CDNs can never serve an old version) and regenerates `lib/promo.ts`. Do not copy the raw videos into `public/`: they are 28 MB each.

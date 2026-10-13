@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import { PROMO } from "../lib/promo";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
@@ -8,7 +9,7 @@ export default function Showreel() {
   const sec = useRef<HTMLElement>(null), vid = useRef<HTMLVideoElement>(null), fill = useRef<HTMLElement>(null);
   const [live, setLive] = useState(false), [paused, setPaused] = useState(false), [muted, setMuted] = useState(true), [t, setT] = useState("0:00"), [mobile, setMobile] = useState(false), [dur, setDur] = useState(0);
   const fmt = (s: number) => `${Math.floor(s / 60)}:${String(Math.round(s) % 60).padStart(2, "0")}`;
-  const shownDur = dur || (mobile ? 45 : 59);  // fallbacks until the video reports its real length
+  const shownDur = dur || (mobile ? PROMO.v.duration : PROMO.h.duration);  // fallbacks until the video reports its real length
   useEffect(() => { const q = window.matchMedia("(max-width: 900px)"); const f = () => setMobile(q.matches); f(); q.addEventListener("change", f); return () => q.removeEventListener("change", f); }, []);
 
   useEffect(() => {
@@ -49,7 +50,7 @@ export default function Showreel() {
           <p>The problem · the gate<br />the handoff</p>
         </div>
         <div className="reel-frame">
-          <video ref={vid} key={mobile ? "v" : "h"} src={mobile ? "/promo-9x16.mp4" : "/promo-16x9.mp4"} poster={mobile ? "/promo-poster-v.jpg" : "/promo-poster.jpg"} muted loop playsInline preload="metadata" aria-label="ContextBridge promo video" />
+          <video ref={vid} key={mobile ? "v" : "h"} src={mobile ? PROMO.v.video : PROMO.h.video} poster={mobile ? PROMO.v.poster : PROMO.h.poster} muted loop playsInline preload="metadata" aria-label="ContextBridge promo video" />
           <div className="reel-ui reel-play-wrap">
             <button className="reel-play" onClick={start} data-cursor aria-label="Play the promo with sound">
               <i /><span>Play with sound<small>{fmt(shownDur)} · {mobile ? "9:16" : "16:9"}</small></span>

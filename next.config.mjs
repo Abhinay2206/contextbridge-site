@@ -37,8 +37,8 @@ const nextConfig = {
   async headers() {
     return [
       { source: "/:path*", headers: security },
-      // large media: revalidate daily, serve stale while refreshing
-      { source: "/:file(promo-.*\\.(?:mp4|jpg))", headers: [{ key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" }] },
+      // promo files are named by content hash (npm run promo), so a changed video gets a new URL and can be cached for a year
+      { source: "/:file(promo-.*\\.[0-9a-f]{8}\\.(?:mp4|jpg))", headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }] },
       { source: "/:file(orvantia\\.webp|benchmark\\.json|ContextBridge-Benchmark-Report\\.docx)", headers: [{ key: "Cache-Control", value: "public, max-age=3600, stale-while-revalidate=86400" }] },
     ];
   },
