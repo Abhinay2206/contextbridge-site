@@ -7,7 +7,6 @@ import { TOOL_VERSION } from "../lib/site";
 import HeroCanvas from "./HeroCanvas";
 gsap.registerPlugin(ScrollTrigger);
 
-const INSTALL = "pip install contextbridge-cli";
 type Kind = "OK" | "WARN" | "BLOCK";
 type G = { verdict: "READY" | "REVIEW_REQUIRED" | "BLOCKED"; short: string; exit: number; color: string; lines: [Kind, string][]; note: string };
 // The messages are the tool's real output (see the gate lab below for the full set).
@@ -20,7 +19,6 @@ const GATE: G[] = [
 export default function Hero({ stats }: { stats: { v: string; l: string }[] }) {
   const root = useRef<HTMLElement>(null), accent = useRef<HTMLSpanElement>(null);
   const disp = useRef(0), manualUntil = useRef(0);
-  const [copied, setCopied] = useState(false);
   const [i, setI] = useState(0), [shown, setShown] = useState(0);
   const g = GATE[i];
 
@@ -61,8 +59,6 @@ export default function Hero({ stats }: { stats: { v: string; l: string }[] }) {
     return () => c.revert();
   }, []);
 
-  const copy = async () => { try { await navigator.clipboard.writeText(INSTALL); setCopied(true); setTimeout(() => setCopied(false), 1600); } catch {} };
-
   return (
     <section className="hero" id="top" ref={root} style={{ ["--vc" as string]: g.color }}>
       <HeroCanvas verdict={i} dispersion={disp} />
@@ -79,7 +75,7 @@ export default function Hero({ stats }: { stats: { v: string; l: string }[] }) {
           </h1>
           <p className="hero-sub">The <b>ContextBridge skill</b> checkpoints the real state of your repo, records the tests you actually ran, and tells the next session whether it is safe to touch code.</p>
           <div className="cta-row">
-            <button className="pill solid" onClick={copy} data-magnet aria-label="Copy install command"><code>{INSTALL}</code><span className="copy">{copied ? "Copied" : "Copy"}</span></button>
+            <a className="pill solid" href="/docs/quick-start" data-magnet>Get started<span className="copy">Quick Start →</span></a>
             <a className="pill ghost" href={REPO} target="_blank" rel="noreferrer" data-magnet>View on GitHub ↗</a>
           </div>
         </div>
